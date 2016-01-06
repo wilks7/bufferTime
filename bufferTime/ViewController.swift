@@ -43,23 +43,6 @@ class ViewController: UIViewController {
         
     }
     
-//        NetworkController.fetchHolidays() { (holidays, candles, error) -> Void in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            }
-//            
-//            if let holidays = holidays, let candles = candles {
-//                
-//                print(holidays.count)
-//                print(candles.count)
-//                for can in candles {
-//                    
-//                }
-//
-//            }
-//        }
-    
-    
     func handleNotification(notification: NSNotification) {
         if let location = notification.userInfo!["location"] as? CLLocation {
             print("Current Location: \(location)")
@@ -98,7 +81,4 @@ class ViewController: UIViewController {
         let weekDay = myComponents?.weekday
         return weekDay!
     }
-    
-
 }
-

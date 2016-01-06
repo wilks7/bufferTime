@@ -71,6 +71,7 @@
 				1FAA942E1C28C91B00CA200C /* NetworkController.swift */,
 				1FAA94341C29019700CA200C /* LocationController.swift */,
 				1F809EB71C2949E100CD330C /* CandleController.swift */,
+				1F28CBF21C2B8D0B0096BDB8 /* UserController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -94,20 +95,27 @@
 		1FAA941B1C28C48C00CA200C /* bufferTime */ = {
 			isa = PBXGroup;
 			children = (
+				BB66838A1C3358D900D63CFB /* Views */,
 				1F28CBEB1C2B7B3C0096BDB8 /* Controllers */,
 				1F28CBEA1C2B7B2B0096BDB8 /* Model */,
 				1FAA941C1C28C48C00CA200C /* AppDelegate.swift */,
-				1FAA941E1C28C48C00CA200C /* ViewController.swift */,
-				1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */,
-				1F28CBF21C2B8D0B0096BDB8 /* UserController.swift */,
-				1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */,
 				1FAA94201C28C48C00CA200C /* Main.storyboard */,
-				1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */,
 				1FAA94231C28C48C00CA200C /* Assets.xcassets */,
 				1FAA94251C28C48C00CA200C /* LaunchScreen.storyboard */,
 				1FAA94281C28C48C00CA200C /* Info.plist */,
 			);
 			path = bufferTime;
+			sourceTree = "<group>";
+		};
+		BB66838A1C3358D900D63CFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */,
+				1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */,
+				1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */,
+				1FAA941E1C28C48C00CA200C /* ViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
