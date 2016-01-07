@@ -44,7 +44,6 @@ class User{
     
     func setAddress(loc: CLLocation){
         self.address = loc
-        print("")
     }
     
 }

@@ -14,30 +14,30 @@ class ChooseAddressViewController: UIViewController {
     @IBOutlet weak var addressTextfield: UITextField!
     
     @IBOutlet weak var zipTextfield: UITextField!
-    
-    @IBOutlet weak var stateTextfield: UITextField!
-    
+        
     @IBAction func nextTapped(sender: AnyObject) {
-        LocationController.locationFromAddress(createAddress()) { (location) -> Void in
+        let address = createAddress()
+        LocationController.locationFromAddress(address) { (location, placemark) -> Void in
+            
             if let location = location {
+                
                 let myUser = User(time: NSTimeInterval(0))
                 myUser.setAddress(location)
                 let dic = myUser.dictionaryCopy()
                 
                 NSUserDefaults.standardUserDefaults().setValue(dic, forKey: "user")
                 
-                //UserController.sharedController.setAddress(placemark)
+                self.performSegueWithIdentifier("toNext", sender: nil)
                 
             }else{
-                print("none")
+                print("no found location")
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
     }
     
     func createAddress()->String{
@@ -46,8 +46,4 @@ class ChooseAddressViewController: UIViewController {
         let second = zipTextfield.text!
         return first + second
     }
-    
-    
-    
-
 }

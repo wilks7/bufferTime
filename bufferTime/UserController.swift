@@ -37,11 +37,9 @@ class UserController{
         UserController.sharedController.currentUser.address = loc
         currentUser.address = loc
         
-        print(loc)
         
         UserController.sharedController.currentUser.setAddress(loc)
         
-        print(UserController.sharedController.currentUser.address)
     }
     
     static func setBufferTime(interval: NSTimeInterval){

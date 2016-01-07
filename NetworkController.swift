@@ -13,7 +13,7 @@ class NetworkController {
     static let urlString = "http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=off&year=2016&month=x&c=onm=0&geo=geoname&geonameid=3448439&m=50&s=on"
     
     
-    static func fetchBasedOnLocation(zip: String, completion:(holidays: [Holiday]?, candles: [Candle]?, error: NSError? )->Void){
+    static func fetchBasedOnZip(zip: String, completion:(holidays: [Holiday]?, candles: [Candle]?, error: NSError? )->Void){
         
         let myUrlString = "http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=off&year=2016&month=x&c=onm=0&geo=zip&zip=\(zip)&m=0&s=on"
         
@@ -58,7 +58,6 @@ class NetworkController {
                 }
                 completion(holidays: holidays, candles: candleLightings, error: nil)
             } else {
-                print("nope")
                 completion(holidays: nil, candles: nil, error: nil)
             }
             
@@ -109,7 +108,6 @@ class NetworkController {
                 }
                 completion(holidays: holidays, candles: candleLightings, error: nil)
             } else {
-                print("nope")
                 completion(holidays: nil, candles: nil, error: nil)
             }
             

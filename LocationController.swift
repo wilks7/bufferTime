@@ -27,8 +27,10 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         let geoCoder = CLGeocoder()
         
         geoCoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
-            if let nameOfLocation = placemarks?.first?.name, let zip = placemarks?.first?.postalCode {
-        completion(stringLocation: nameOfLocation, zip: zip)
+            guard let placemarks = placemarks else {return completion(stringLocation: "Unknown", zip: "Unkown")}
+            
+            if let nameOfLocation = placemarks.first?.name, let zip = placemarks.first?.postalCode {
+                completion(stringLocation: nameOfLocation, zip: zip)
             } else {
                 completion(stringLocation: "Unknown", zip: "Unkown")
             }
@@ -36,16 +38,15 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     
-    static func locationFromAddress(address: String,completion:(location:CLLocation?)->Void){
-        var geocoder = CLGeocoder()
+    static func locationFromAddress(address: String,completion:(location:CLLocation?, placemark: CLPlacemark?)->Void){
+        let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) -> Void in
-            let placemark = placemarks?[0]
-            let loc = placemark?.location
-            if let placemark = placemark {
-                completion(location: loc)
-            }else{
-                completion(location: nil)
-            }
+            
+            guard let placemarks = placemarks else {return completion(location: nil, placemark: nil) }
+            let placemark = placemarks[0]
+            let loc = placemark.location
+            
+            completion(location: loc, placemark: placemark)
         }
     }
     
@@ -67,7 +68,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
-        print("Location Unreachable")
+        print("Cant Get Current Locaiton")
     }
 }
 
