@@ -19,13 +19,7 @@ class FirstViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if !(SettingsController.sharedController.checkNS()){
-            self.performSegueWithIdentifier("noNSuser", sender: nil)
-            print("out")
-        }else{
-            print("in")
-        }
+
     }
     
     override func viewDidLoad() {
@@ -33,4 +27,13 @@ class FirstViewController: UIViewController {
 
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if !(SettingsController.sharedController.checkNS()){
+            self.performSegueWithIdentifier("noNSuser", sender: nil)
+            print("out")
+        }else{
+            print("in")
+        }
+    }
 }

@@ -35,7 +35,7 @@ class CandleController {
             
             let silentAlert = UILocalNotification()
             silentAlert.fireDate = newDate
-            silentAlert.userInfo!["silent"] = true
+            silentAlert.userInfo = ["silent" : true]
             silentAlert.timeZone = NSTimeZone.localTimeZone()
             UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
         }
