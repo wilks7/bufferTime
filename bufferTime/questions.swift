@@ -14,5 +14,7 @@
 
 - how to handle if user flies somewhere
 
+- why NSuserdefaults check doesnt work
+
 
 */
