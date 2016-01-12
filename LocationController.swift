@@ -19,11 +19,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     func getCurrentLocation() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        //locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
     }
     
-    func addressForLocation(location: CLLocation, completion:(stringLocation: String, zip: String)->Void){
+    
+    // MARK: - String Work
+    func addressFromLocation(location: CLLocation, completion:(stringLocation: String, zip: String)->Void){
         let geoCoder = CLGeocoder()
         
         geoCoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
@@ -59,7 +61,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
         if let foundLocation = locations.first{
             
-            addressForLocation(foundLocation, completion: { (stringLocation, zip) -> Void in
+            addressFromLocation(foundLocation, completion: { (stringLocation, zip) -> Void in
                 NSNotificationCenter.defaultCenter().postNotificationName("locationUpdated", object: nil, userInfo: ["location":foundLocation, "stringLocation":stringLocation, "zip":zip])
             })
             

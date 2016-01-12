@@ -17,6 +17,7 @@ class CandleController {
     
     func setNotification(fireDate: NSDate) {
         let alarmNotification = UILocalNotification()
+        alarmNotification.userInfo!["test"] = "Testing"
         alarmNotification.fireDate = fireDate
         alarmNotification.timeZone = NSTimeZone.localTimeZone()
         alarmNotification.soundName = "sms-received3.caf"
@@ -24,4 +25,20 @@ class CandleController {
         
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
     }
+    
+    func setUpdateLocationNotifiers(firedate: NSDate){
+                
+        var tempDate = firedate
+        for _ in 0...10{
+            let newDate = tempDate.dateByAddingTimeInterval(-1800)
+            tempDate = newDate
+            
+            let silentAlert = UILocalNotification()
+            silentAlert.fireDate = newDate
+            silentAlert.userInfo!["silent"] = true
+            silentAlert.timeZone = NSTimeZone.localTimeZone()
+            UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
+        }
+    }
+    
 }

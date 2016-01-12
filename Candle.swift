@@ -25,6 +25,7 @@ class Candle {
     }
     
     func trimDate(dateString: String)->String{
+        print("")
         var myString = dateString.stringByReplacingOccurrencesOfString("T", withString: " ")
         var dateArray = Array(myString.characters)
         var datee = ""

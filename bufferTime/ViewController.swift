@@ -18,25 +18,8 @@ class ViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleNotification:", name: "locationUpdated", object: nil)
         
-        NetworkController.fetchBasedOnZip("11581") { (holidays, candles, error) -> Void in
-            if let candles = candles {
-                print("Candles: \(candles.count)")
-            }
-        }
-        
-        
-    }
-    
-    func checkIfCandleDay(){
-        
-        let candleDates = String()
+        LocationController.sharedInsance.getCurrentLocation()
 
-        if getDayOfWeek() == 6 || candleDates.containsString(dateFormat()) {
-            
-            
-            LocationController.sharedInsance.getCurrentLocation()
-            print("Today is a candle day, getting location")
-        }
     }
     
     func handleNotification(notification: NSNotification) {
@@ -45,15 +28,25 @@ class ViewController: UIViewController {
             
         }
         if let stringName = notification.userInfo!["stringLocation"] as? String {
-            print(stringName)
+            print("Current Address: \(stringName)")
         }
         
         if let zip = notification.userInfo!["zip"] as? String {
-            print(zip)
+            print("Zip: \(zip)")
         }
     }
     
-    
+    func checkIfCandleDay(){
+        
+        let candleDates = String()
+        
+        if getDayOfWeek() == 6 || candleDates.containsString(dateFormat()) {
+            
+            
+            //LocationController.sharedInsance.getCurrentLocation()
+            print("Today is a candle day, getting location")
+        }
+    }
 
     func dateFormat()->String{
         let formatter = NSDateFormatter()

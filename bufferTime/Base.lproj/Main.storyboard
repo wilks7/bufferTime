@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Cg-C1-ypD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KDp-GA-GiT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-0s-pwn">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="246" y="285" width="109" height="30"/>
+                                <state key="normal" title="choose address"/>
                                 <connections>
                                     <segue destination="ML8-kQ-gq0" kind="show" id="NcU-Su-M6b"/>
                                 </connections>
@@ -36,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="map-ol-QsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="483" y="10"/>
+            <point key="canvasLocation" x="364" y="73"/>
         </scene>
         <!--Choose Address View Controller-->
         <scene sceneID="Tik-yx-CRb">
@@ -209,23 +209,35 @@
             </objects>
             <point key="canvasLocation" x="1844" y="268"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KeY-rB-orD">
+        <!--First View Controller-->
+        <scene sceneID="CAF-NY-mJb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Cg-C1-ypD" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="07j-nS-Hs4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="KDp-GA-GiT" customClass="FirstViewController" customModule="bufferTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bp2-Br-tcw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ruz-Zj-BDX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ca8-0x-2SX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-P1-dCZ">
+                                <rect key="frame" x="277" y="156" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="chooseBufferTapped:" destination="KDp-GA-GiT" eventType="touchUpInside" id="mQ1-DR-oRd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <connections>
-                        <segue destination="LKh-ha-2Ly" kind="relationship" relationship="rootViewController" id="cpq-Cm-cCs"/>
+                        <segue destination="LKh-ha-2Ly" kind="presentation" identifier="noNSuser" id="LFQ-ZZ-a0E"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKz-w1-cEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rz6-4Q-RIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="268"/>
+            <point key="canvasLocation" x="-543" y="73"/>
         </scene>
     </scenes>
 </document>

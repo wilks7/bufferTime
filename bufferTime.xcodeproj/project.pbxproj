@@ -22,6 +22,9 @@
 		1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94301C28CAAB00CA200C /* Holiday.swift */; };
 		1FAA94331C28D91000CA200C /* Candle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94321C28D91000CA200C /* Candle.swift */; };
 		1FAA94351C29019700CA200C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94341C29019700CA200C /* LocationController.swift */; };
+		BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */; };
+		BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A91C4478AB000E6BAA /* SettingsController.swift */; };
+		BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06AB1C448B04000E6BAA /* questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		1FAA94301C28CAAB00CA200C /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Holiday.swift; path = ../Holiday.swift; sourceTree = "<group>"; };
 		1FAA94321C28D91000CA200C /* Candle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candle.swift; path = ../Candle.swift; sourceTree = "<group>"; };
 		1FAA94341C29019700CA200C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = ../LocationController.swift; sourceTree = "<group>"; };
+		BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		BBBA06A91C4478AB000E6BAA /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		BBBA06AB1C448B04000E6BAA /* questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 			children = (
 				1F28CBEC1C2B7C6D0096BDB8 /* User.swift */,
 				1FAA94321C28D91000CA200C /* Candle.swift */,
+				BBBA06AB1C448B04000E6BAA /* questions.swift */,
 				1FAA94301C28CAAB00CA200C /* Holiday.swift */,
 			);
 			name = Model;
@@ -68,6 +75,7 @@
 		1F28CBEB1C2B7B3C0096BDB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBBA06A91C4478AB000E6BAA /* SettingsController.swift */,
 				1FAA942E1C28C91B00CA200C /* NetworkController.swift */,
 				1FAA94341C29019700CA200C /* LocationController.swift */,
 				1F809EB71C2949E100CD330C /* CandleController.swift */,
@@ -114,6 +122,7 @@
 				1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */,
 				1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */,
 				1FAA941E1C28C48C00CA200C /* ViewController.swift */,
+				BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -194,10 +203,13 @@
 				1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */,
 				1F28CBF31C2B8D0B0096BDB8 /* UserController.swift in Sources */,
 				1F5AA0BE1C2A574E00B24608 /* ChooseBufferViewController.swift in Sources */,
+				BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */,
 				1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */,
+				BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */,
 				1FAA942F1C28C91B00CA200C /* NetworkController.swift in Sources */,
 				1F28CBED1C2B7C6D0096BDB8 /* User.swift in Sources */,
 				1F809EB81C2949E100CD330C /* CandleController.swift in Sources */,
+				BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */,
 				1FAA94351C29019700CA200C /* LocationController.swift in Sources */,
 				1FAA94331C28D91000CA200C /* Candle.swift in Sources */,
 				1F28CBF51C2B94620096BDB8 /* LabelViewController.swift in Sources */,
