@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v52-N6-HAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="10"/>
+            <point key="canvasLocation" x="1128" y="73"/>
         </scene>
         <!--Choose Buffer View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -105,30 +105,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14U-FI-j3A">
                                 <rect key="frame" x="0.0" y="200" width="600" height="200"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFP-1S-36Y">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFP-1S-36Y">
                                         <rect key="frame" x="8" y="0.0" width="584" height="200"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bN9-E9-8mV">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bN9-E9-8mV">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="5d3-PV-Och"/>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4On-jX-znR"/>
                                                 </connections>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geN-tv-dWM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geN-tv-dWM">
                                                 <rect key="frame" x="270" y="0.0" width="16" height="200"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zf0-my-LFo">
+                                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Zf0-my-LFo">
                                                 <rect key="frame" x="286" y="0.0" width="270" height="200"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="C2y-ou-eX3"/>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Jao-QE-FZm"/>
                                                 </connections>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-fB-IwD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-fB-IwD">
                                                 <rect key="frame" x="556" y="0.0" width="28" height="200"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -221,15 +221,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-P1-dCZ">
-                                <rect key="frame" x="277" y="156" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-P1-dCZ">
+                                <rect key="frame" x="228" y="499" width="144" height="30"/>
+                                <state key="normal" title="Reset Home Address"/>
                                 <connections>
                                     <action selector="chooseBufferTapped:" destination="KDp-GA-GiT" eventType="touchUpInside" id="mQ1-DR-oRd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ruz-Zj-BDX" firstAttribute="top" secondItem="wpT-P1-dCZ" secondAttribute="bottom" constant="71" id="4ty-Ty-nRW"/>
+                            <constraint firstItem="wpT-P1-dCZ" firstAttribute="centerX" secondItem="ca8-0x-2SX" secondAttribute="centerX" id="VxB-J5-pXZ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="LKh-ha-2Ly" kind="presentation" identifier="noNSuser" id="LFQ-ZZ-a0E"/>

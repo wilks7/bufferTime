@@ -26,9 +26,9 @@ class CandleController {
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
     }
     
-    func setUpdateLocationNotifiers(firedate: NSDate){
+    func set30minIntervals(candleTime: NSDate){
                 
-        var tempDate = firedate
+        var tempDate = candleTime
         for _ in 0...10{
             let newDate = tempDate.dateByAddingTimeInterval(-1800)
             tempDate = newDate
@@ -38,7 +38,14 @@ class CandleController {
             silentAlert.userInfo = ["silent" : true]
             silentAlert.timeZone = NSTimeZone.localTimeZone()
             UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
+            NSNotificationCenter.defaultCenter().postNotificationName("updateInterval", object: nil, userInfo: ["NStest":"thisIsTest"])
+
         }
+    }
+    
+    func setTimer(){
+        var timer = NSTimer()
+        timer = NSTimer.scheduledTimerWithTimeInterval(10, target:self, selector: Selector("intervalUpdate"), userInfo: nil, repeats: true)
     }
     
 }

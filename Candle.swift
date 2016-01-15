@@ -33,12 +33,9 @@ class Candle {
         var myString = dateString.stringByReplacingOccurrencesOfString("T", withString: " ")
         
         let format = NSDateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ssxxxxx"
-        
-        let datr = format.dateFromString(myString)
+
         
         print(myString)
-        print(datr!)
         
         
         var dateArray = Array(myString.characters)

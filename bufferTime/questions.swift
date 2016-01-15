@@ -8,7 +8,5 @@
 
 - how to handle if user flies somewhere
 
-- why UILocalnotification wont take my date on firstviewcontroller
-
 
 */

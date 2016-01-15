@@ -13,6 +13,7 @@
 		1F28CBF51C2B94620096BDB8 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */; };
 		1F5AA0BE1C2A574E00B24608 /* ChooseBufferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */; };
 		1F809EB81C2949E100CD330C /* CandleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F809EB71C2949E100CD330C /* CandleController.swift */; };
+		1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */; };
 		1FAA941D1C28C48C00CA200C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA941C1C28C48C00CA200C /* AppDelegate.swift */; };
 		1FAA941F1C28C48C00CA200C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA941E1C28C48C00CA200C /* ViewController.swift */; };
 		1FAA94221C28C48C00CA200C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA94201C28C48C00CA200C /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseBufferViewController.swift; sourceTree = "<group>"; };
 		1F809EB71C2949E100CD330C /* CandleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CandleController.swift; path = ../CandleController.swift; sourceTree = "<group>"; };
+		1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		1FAA94191C28C48C00CA200C /* bufferTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bufferTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAA941C1C28C48C00CA200C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FAA941E1C28C48C00CA200C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,6 @@
 			children = (
 				1F28CBEC1C2B7C6D0096BDB8 /* User.swift */,
 				1FAA94321C28D91000CA200C /* Candle.swift */,
-				BBBA06AB1C448B04000E6BAA /* questions.swift */,
 				1FAA94301C28CAAB00CA200C /* Holiday.swift */,
 			);
 			name = Model;
@@ -107,6 +108,8 @@
 				1F28CBEB1C2B7B3C0096BDB8 /* Controllers */,
 				1F28CBEA1C2B7B2B0096BDB8 /* Model */,
 				1FAA941C1C28C48C00CA200C /* AppDelegate.swift */,
+				BBBA06AB1C448B04000E6BAA /* questions.swift */,
+				1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */,
 				1FAA94201C28C48C00CA200C /* Main.storyboard */,
 				1FAA94231C28C48C00CA200C /* Assets.xcassets */,
 				1FAA94251C28C48C00CA200C /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */,
 				1FAA941F1C28C48C00CA200C /* ViewController.swift in Sources */,
 				1FAA941D1C28C48C00CA200C /* AppDelegate.swift in Sources */,
 				1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */,
