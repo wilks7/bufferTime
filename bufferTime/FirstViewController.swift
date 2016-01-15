@@ -29,11 +29,17 @@ class FirstViewController: UIViewController {
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         let date = NSDate()
-        let newDate = date.dateByAddingTimeInterval(15)
+        //let newDate = date.dateByAddingTimeInterval(15)
         
+        let format = NSDateFormatter()
+        format.dateFormat = "MM/dd/yy-hh:mm:ss"
+        
+        let string = format.stringFromDate(date)
+        let myDate = format.dateFromString(string)
+        guard let dater = myDate else {return}
         
         let silentAlert = UILocalNotification()
-        silentAlert.fireDate = newDate
+        silentAlert.fireDate = date.dateByAddingTimeInterval(10)
         silentAlert.userInfo = ["silent" : true]
         silentAlert.alertBody = "Testing"
         silentAlert.alertAction = "teeesstt"

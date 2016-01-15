@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Candle.swift"
-            timestampString = "474251453.932329"
+            filePath = "NetworkController.swift"
+            timestampString = "474528766.302208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "trimDate(_:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "fetchHolidays(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Candle.swift"
-            timestampString = "474251509.56602"
+            timestampString = "474531375.536629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "init(json:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "trimDate(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Candle.swift"
-            timestampString = "474251590.497419"
+            filePath = "bufferTime/FirstViewController.swift"
+            timestampString = "474531519.554202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "trimDate(_:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

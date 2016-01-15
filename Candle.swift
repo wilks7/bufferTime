@@ -11,6 +11,8 @@ import Foundation
 
 class Candle {
     
+    let link = "http://waracle.net/iphone-nsdateformatter-date-formatting-table/"
+    
     var time: String = ""
     var date: NSDate = NSDate()
     
@@ -26,7 +28,19 @@ class Candle {
     
     func trimDate(dateString: String)->String{
         print("")
+                
+        
         var myString = dateString.stringByReplacingOccurrencesOfString("T", withString: " ")
+        
+        let format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ssxxxxx"
+        
+        let datr = format.dateFromString(myString)
+        
+        print(myString)
+        print(datr!)
+        
+        
         var dateArray = Array(myString.characters)
         var datee = ""
         for i in 0...18{
