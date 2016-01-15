@@ -14,7 +14,7 @@ class SettingsController {
     
     func checkNS()->Bool{
         
-        guard let _ = NSUserDefaults.standardUserDefaults().valueForKey("user") else {return false}
+        guard let _ = NSUserDefaults.standardUserDefaults().valueForKey("allSettings") else {return false}
         return true
     }
 

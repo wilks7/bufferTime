@@ -25,6 +25,7 @@ class ChooseBufferViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         NSUserDefaults.standardUserDefaults().setValue(userDic, forKey: "userDictionary")
         NSUserDefaults.standardUserDefaults().setValue(bufferTime, forKey: "bufferTime")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "allSettings")
         
     }
     

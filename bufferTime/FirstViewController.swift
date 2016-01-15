@@ -24,6 +24,22 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        let date = NSDate()
+        let newDate = date.dateByAddingTimeInterval(15)
+        
+        
+        let silentAlert = UILocalNotification()
+        silentAlert.fireDate = newDate
+        silentAlert.userInfo = ["silent" : true]
+        silentAlert.alertBody = "Testing"
+        silentAlert.alertAction = "teeesstt"
+        silentAlert.soundName = UILocalNotificationDefaultSoundName
+        silentAlert.timeZone = NSTimeZone.localTimeZone()
+        UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
 
     }
 
