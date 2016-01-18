@@ -74,8 +74,9 @@ class LabelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.map.layer.borderWidth = 5
+        self.map.layer.borderWidth = 2
         self.map.layer.borderColor = UIColor.whiteColor().CGColor
+        self.map.layer.cornerRadius = 5
     }
 
 }

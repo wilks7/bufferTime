@@ -236,16 +236,40 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hAC-ge-8pl">
-                                <rect key="frame" x="100" y="75" width="400" height="430"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="49" y="106" width="502" height="388"/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="25Q-VX-fyq">
-                                        <rect key="frame" x="0.0" y="28" width="400" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="parsha" id="25Q-VX-fyq">
+                                        <rect key="frame" x="0.0" y="28" width="502" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25Q-VX-fyq" id="ryd-QY-TNv">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="candle" id="aBM-CD-E8Y">
+                                        <rect key="frame" x="0.0" y="72" width="502" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBM-CD-E8Y" id="YFw-Ec-axG">
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="extra" id="xRu-nR-WBq">
+                                        <rect key="frame" x="0.0" y="116" width="502" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xRu-nR-WBq" id="GUB-PG-rIS">
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -256,12 +280,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25490196078431371" green="0.51372549019607838" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hAC-ge-8pl" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="55" id="6AG-nP-65C"/>
+                            <constraint firstItem="hAC-ge-8pl" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="86" id="6AG-nP-65C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wpT-P1-dCZ" secondAttribute="trailing" id="9je-6l-NYg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hAC-ge-8pl" secondAttribute="trailing" constant="80" id="FWP-Ua-X1t"/>
-                            <constraint firstItem="hAC-ge-8pl" firstAttribute="leading" secondItem="ca8-0x-2SX" secondAttribute="leadingMargin" constant="80" id="NtF-TT-Z00"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hAC-ge-8pl" secondAttribute="trailing" constant="29" id="FWP-Ua-X1t"/>
+                            <constraint firstItem="hAC-ge-8pl" firstAttribute="leading" secondItem="ca8-0x-2SX" secondAttribute="leadingMargin" constant="29" id="NtF-TT-Z00"/>
                             <constraint firstItem="wpT-P1-dCZ" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="8" id="TaK-x4-a4Z"/>
-                            <constraint firstItem="Ruz-Zj-BDX" firstAttribute="top" secondItem="hAC-ge-8pl" secondAttribute="bottom" constant="95" id="hKg-Eo-xuu"/>
+                            <constraint firstItem="Ruz-Zj-BDX" firstAttribute="top" secondItem="hAC-ge-8pl" secondAttribute="bottom" constant="106" id="hKg-Eo-xuu"/>
                         </constraints>
                     </view>
                     <connections>

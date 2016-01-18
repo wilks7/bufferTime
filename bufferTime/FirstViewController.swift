@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewOutlet.layer.borderWidth = 5
+        tableViewOutlet.layer.borderWidth = 2.5
         tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
         tableViewOutlet.layer.cornerRadius = 5
         
@@ -104,11 +104,29 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath)
+        let parshaCell = tableView.dequeueReusableCellWithIdentifier("parsha", forIndexPath: indexPath)
+        let candleCell = tableView.dequeueReusableCellWithIdentifier("candle", forIndexPath: indexPath)
+        let extraCell = tableView.dequeueReusableCellWithIdentifier("extra", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "test"
+        parshaCell.textLabel?.text = "Parsha"
+        candleCell.textLabel?.text = "Candle"
+        extraCell.textLabel?.text = "Extra"
         
-        return cell
+        parshaCell.textLabel?.textColor = .whiteColor()
+        candleCell.textLabel?.textColor = .whiteColor()
+        extraCell.textLabel?.textColor = .whiteColor()
+        
+        switch indexPath.row {
+        case 0:
+            return parshaCell
+        case 1:
+            return candleCell
+        case 2:
+            return extraCell
+        default:
+            return parshaCell
+        }
+        
     }
     
     
