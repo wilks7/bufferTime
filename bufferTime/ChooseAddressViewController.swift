@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     var firstUser = false
     
@@ -94,4 +94,11 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(row)
     }
+    
+    // MARK: TextField Delegate 
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        addressTextfield.resignFirstResponder()
+        zipTextfield.resignFirstResponder()
+    }
+    
 }

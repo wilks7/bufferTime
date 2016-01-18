@@ -18,17 +18,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let dummy = ["dummy":45.55]
-        NetworkController.googleMapsDirections(dummy, destination: dummy) { (time, trafficTime, error) -> Void in
-            guard let time = time, let trafficTime = trafficTime else {return}
-            print(time)
-            print(trafficTime)
-            print("")
-        }
-        
+    @IBAction func manualButtonTapped(sender: AnyObject) {
         LocationController.sharedInsance.getTrafficTime { (time, error) -> Void in
             if let time = time {
                 print(time)
@@ -37,6 +27,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        let dummy = ["dummy":45.55]
+//        NetworkController.googleMapsDirections(dummy, destination: dummy) { (time, trafficTime, error) -> Void in
+//            guard let time = time, let trafficTime = trafficTime else {return}
+//            print(time)
+//            print(trafficTime)
+//            print("")
+//        }
+        
         
         tableViewOutlet.layer.borderWidth = 2.5
         tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor

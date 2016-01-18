@@ -142,8 +142,8 @@ class NetworkController {
             destinationCoord = stringLat+","+stringLon
         }
         
-        //let googleMapsAPI = "https://maps.googleapis.com/maps/api/directions/json?origin=\(originCoord)&destination=\(destinationCoord)&key=AIzaSyDl4d4R3YjYHbKcZIemBEYMs1ujGrG2ekY"
-        let googleMapsAPI = "https://maps.googleapis.com/maps/api/directions/json?origin=40.645797,-73.730383&destination=40.725797,-73.817739&departure_time=now&mode=driving&traffic_model=best_guess&key=AIzaSyDl4d4R3YjYHbKcZIemBEYMs1ujGrG2ekY"
+        let googleMapsAPI = "https://maps.googleapis.com/maps/api/directions/json?origin=\(originCoord)&destination=\(destinationCoord)&key=AIzaSyDl4d4R3YjYHbKcZIemBEYMs1ujGrG2ekY"
+        //let googleMapsAPI = "https://maps.googleapis.com/maps/api/directions/json?origin=40.645797,-73.730383&destination=40.725797,-73.817739&departure_time=now&mode=driving&traffic_model=best_guess&key=AIzaSyDl4d4R3YjYHbKcZIemBEYMs1ujGrG2ekY"
         
         
         guard let url = NSURL(string: googleMapsAPI) else {return}
