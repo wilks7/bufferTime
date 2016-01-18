@@ -19,14 +19,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func manualButtonTapped(sender: AnyObject) {
-        LocationController.sharedInsance.getTrafficTime { (time, error) -> Void in
-            if let time = time {
-                print(time)
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
+        LocationController.sharedInsance.getCurrentLocation()
     }
     
     override func viewDidLoad() {
@@ -45,8 +38,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
         tableViewOutlet.layer.cornerRadius = 5
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "intervalUpdate", name: "updateInterval", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleNotification:", name: "locationUpdated", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "intervalUpdate", name: "updateInterval", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleNotification:", name: "locationUpdated", object: nil)
 
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
         
@@ -65,35 +58,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("device has settings")
         }
     }
-    
-    
-    func handleNotification(notification: NSNotification) {
-        if let location = notification.userInfo!["location"] as? CLLocation {
-            print("Current Location: \(location)")
-            
-        }
-        if let stringName = notification.userInfo!["stringLocation"] as? String {
-            print("Current Address: \(stringName)")
-        }
-        
-        if let zip = notification.userInfo!["zip"] as? String {
-            print("Zip: \(zip)")
-        }
-    }
-    
-    func intervalUpdate(){
-        print("ninja we made it")
-    }
-    
-    func shabbosReminder(){
-        
-    }
-    
-    func set30minIntervals(candleTime: NSDate){
-        
-    }
-    
-    
     
     func notificationTest(){
         let date = NSDate()

@@ -13,7 +13,7 @@ class CandleController {
     
     static let sharedController = CandleController()
     
-    let bufferTime = ""
+    var todayCandle: NSDate?
     
     func setNotification(fireDate: NSDate) {
         let alarmNotification = UILocalNotification()

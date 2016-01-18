@@ -124,7 +124,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    static func googleMapsDirections(origin: [String:Double], destination: [String:Double], completion:(time: String?, trafficTime: String?, error: NSError?)->Void){
+    static func googleMapsDirections(origin: [String:Double], destination: [String:Double], completion:(time: Int?, trafficTime: Int?, error: NSError?)->Void){
         
         var originCoord = ""
         if let lat = origin["latitude"], let lon = origin["longitude"]{
@@ -168,15 +168,15 @@ class NetworkController {
                 if let routeData = routes.first as? [String:AnyObject]{
                     if let legs = routeData["legs"] as? [AnyObject]{
                         if let legsData = legs.first as? [String:AnyObject]{
-                            var totalDuration = ""
-                            var totalDurationTraffic = ""
+                            var totalDuration = 0
+                            var totalDurationTraffic = 0
                             if let duration = legsData["duration"] as? [String:AnyObject]{
-                                if let time = duration["text"] as? String{
+                                if let time = duration["value"] as? Int{
                                     totalDuration = time
                                 }
                             }
                             if let durationTraffic = legsData["duration_in_traffic"] as? [String:AnyObject]{
-                                if let time = durationTraffic["text"] as? String{
+                                if let time = durationTraffic["value"] as? Int{
                                     totalDurationTraffic = time
                                 }
                             }
