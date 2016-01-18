@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F28CBED1C2B7C6D0096BDB8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBEC1C2B7C6D0096BDB8 /* User.swift */; };
 		1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */; };
-		1F28CBF31C2B8D0B0096BDB8 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF21C2B8D0B0096BDB8 /* UserController.swift */; };
 		1F28CBF51C2B94620096BDB8 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */; };
-		1F5AA0BE1C2A574E00B24608 /* ChooseBufferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */; };
 		1F809EB81C2949E100CD330C /* CandleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F809EB71C2949E100CD330C /* CandleController.swift */; };
 		1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */; };
 		1F9B92CB1C49A85900E5FE19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9B92C91C49A85900E5FE19 /* Bolts.framework */; };
@@ -27,7 +24,6 @@
 		1F9B92DF1C49AB2C00E5FE19 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9B92DE1C49AB2C00E5FE19 /* libz.tbd */; };
 		1F9B92E11C49AB3600E5FE19 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9B92E01C49AB3600E5FE19 /* libsqlite3.tbd */; };
 		1FAA941D1C28C48C00CA200C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA941C1C28C48C00CA200C /* AppDelegate.swift */; };
-		1FAA941F1C28C48C00CA200C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA941E1C28C48C00CA200C /* ViewController.swift */; };
 		1FAA94221C28C48C00CA200C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA94201C28C48C00CA200C /* Main.storyboard */; };
 		1FAA94241C28C48C00CA200C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA94231C28C48C00CA200C /* Assets.xcassets */; };
 		1FAA94271C28C48C00CA200C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA94251C28C48C00CA200C /* LaunchScreen.storyboard */; };
@@ -35,17 +31,16 @@
 		1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94301C28CAAB00CA200C /* Holiday.swift */; };
 		1FAA94331C28D91000CA200C /* Candle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94321C28D91000CA200C /* Candle.swift */; };
 		1FAA94351C29019700CA200C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94341C29019700CA200C /* LocationController.swift */; };
+		BB319D691C4C5D26006ADEF5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D681C4C5D26006ADEF5 /* Home.swift */; };
+		BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */; };
 		BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */; };
 		BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A91C4478AB000E6BAA /* SettingsController.swift */; };
 		BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06AB1C448B04000E6BAA /* questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F28CBEC1C2B7C6D0096BDB8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAddressViewController.swift; sourceTree = "<group>"; };
-		1F28CBF21C2B8D0B0096BDB8 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
-		1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseBufferViewController.swift; sourceTree = "<group>"; };
 		1F809EB71C2949E100CD330C /* CandleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CandleController.swift; path = ../CandleController.swift; sourceTree = "<group>"; };
 		1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		1F9B92C91C49A85900E5FE19 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -62,7 +57,6 @@
 		1F9B92E01C49AB3600E5FE19 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1FAA94191C28C48C00CA200C /* bufferTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bufferTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAA941C1C28C48C00CA200C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FAA941E1C28C48C00CA200C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FAA94211C28C48C00CA200C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FAA94231C28C48C00CA200C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FAA94261C28C48C00CA200C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +65,8 @@
 		1FAA94301C28CAAB00CA200C /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Holiday.swift; path = ../Holiday.swift; sourceTree = "<group>"; };
 		1FAA94321C28D91000CA200C /* Candle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candle.swift; path = ../Candle.swift; sourceTree = "<group>"; };
 		1FAA94341C29019700CA200C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = ../LocationController.swift; sourceTree = "<group>"; };
+		BB319D681C4C5D26006ADEF5 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceController.swift; sourceTree = "<group>"; };
 		BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		BBBA06A91C4478AB000E6BAA /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BBBA06AB1C448B04000E6BAA /* questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
@@ -102,9 +98,9 @@
 		1F28CBEA1C2B7B2B0096BDB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F28CBEC1C2B7C6D0096BDB8 /* User.swift */,
 				1FAA94321C28D91000CA200C /* Candle.swift */,
 				1FAA94301C28CAAB00CA200C /* Holiday.swift */,
+				BB319D681C4C5D26006ADEF5 /* Home.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -113,10 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				BBBA06A91C4478AB000E6BAA /* SettingsController.swift */,
+				BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */,
 				1FAA942E1C28C91B00CA200C /* NetworkController.swift */,
 				1FAA94341C29019700CA200C /* LocationController.swift */,
 				1F809EB71C2949E100CD330C /* CandleController.swift */,
-				1F28CBF21C2B8D0B0096BDB8 /* UserController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -178,9 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */,
-				1F5AA0BD1C2A574E00B24608 /* ChooseBufferViewController.swift */,
 				1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */,
-				1FAA941E1C28C48C00CA200C /* ViewController.swift */,
 				BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */,
 			);
 			name = Views;
@@ -264,16 +258,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */,
-				1FAA941F1C28C48C00CA200C /* ViewController.swift in Sources */,
+				BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */,
 				1FAA941D1C28C48C00CA200C /* AppDelegate.swift in Sources */,
 				1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */,
-				1F28CBF31C2B8D0B0096BDB8 /* UserController.swift in Sources */,
-				1F5AA0BE1C2A574E00B24608 /* ChooseBufferViewController.swift in Sources */,
+				BB319D691C4C5D26006ADEF5 /* Home.swift in Sources */,
 				BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */,
 				1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */,
 				BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */,
 				1FAA942F1C28C91B00CA200C /* NetworkController.swift in Sources */,
-				1F28CBED1C2B7C6D0096BDB8 /* User.swift in Sources */,
 				1F809EB81C2949E100CD330C /* CandleController.swift in Sources */,
 				BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */,
 				1FAA94351C29019700CA200C /* LocationController.swift in Sources */,

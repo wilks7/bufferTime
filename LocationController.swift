@@ -31,8 +31,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         geoCoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
             guard let placemarks = placemarks else {return completion(stringLocation: "Unknown", zip: "Unkown")}
             
-            if let nameOfLocation = placemarks.first?.name, let zip = placemarks.first?.postalCode {
-                completion(stringLocation: nameOfLocation, zip: zip)
+            if let nameOfLocation = placemarks.first?.name, let zip = placemarks.first?.postalCode, let city = placemarks.first?.locality {
+                let string = "\(nameOfLocation), \(city), \(zip)"
+                completion(stringLocation: string, zip: zip)
             } else {
                 completion(stringLocation: "Unknown", zip: "Unkown")
             }

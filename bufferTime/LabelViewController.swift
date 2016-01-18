@@ -10,34 +10,72 @@ import UIKit
 import MapKit
 
 class LabelViewController: UIViewController {
+    
+    var zip = ""
+    
+    var address = ""
+    
+    @IBOutlet weak var map: MKMapView!
+    
+    @IBOutlet weak var addressLabel: UILabel!
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBAction func resetButtonTapped(sender: AnyObject) {
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        NetworkController.fetchBasedOnZip(zip) { (holidays, candles, error) -> Void in
+            if let candles = candles {
+                print("Candles: \(candles.count)")
+            }
+        }
         
-        guard let userNSDic = NSUserDefaults.standardUserDefaults().valueForKey("user") as? [String:AnyObject]
-            else {return}
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if let coordinates = userNSDic["address"] as? [String:AnyObject] {
+        
+        if let coordinates = NSUserDefaults.standardUserDefaults().valueForKey("addressCoordinates") as? [String : Double]{
             
-            guard let longitude = coordinates["lon"] as? Double,
-                let latitude = coordinates["lat"] as? Double else {return}
+            guard let longitude = coordinates["longitude"],
+                let latitude = coordinates["latitude"] else {return}
             
             let location = CLLocation(latitude: latitude, longitude: longitude)
             
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            
+            
+            let anotation = Home(title: "Home", coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), info: "Spend Shabbos")
+            
+            self.map.setRegion(region, animated: true)
+            self.map.addAnnotation(anotation)
+            
+            
             LocationController.sharedInsance.addressFromLocation(location, completion: { (stringLocation, zip) -> Void in
-                self.label.text = zip
-                NetworkController.fetchBasedOnZip(zip) { (holidays, candles, error) -> Void in
-                    if let candles = candles {
-                        print("Candles: \(candles.count)")
-                    }
-                }
-            })            
+                self.addressLabel.text = stringLocation
+            })
+            
+        }
+        
+        if let buffer = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime"){
+            
+            if let buffer = buffer as? Int{
+                let totalMinutes = buffer/60
+                let hours = totalMinutes/60
+                let minutes = totalMinutes%60
+                self.timeLabel.text = String(hours)+" hours and "+String(minutes)+" minutes"
+            }
+            
         }
     }
-
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.map.layer.borderWidth = 5
+        self.map.layer.borderColor = UIColor.whiteColor().CGColor
+    }
 
 }
