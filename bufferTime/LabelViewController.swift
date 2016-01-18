@@ -11,22 +11,43 @@ import MapKit
 
 class LabelViewController: UIViewController {
     
-    var zip = ""
     
-    var address = ""
     
     @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var addressLabel: UILabel!
 
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var zip = ""
+    
+    //var address = ""
+    
     @IBAction func resetButtonTapped(sender: AnyObject) {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        NetworkController.fetchBasedOnZip(zip) { (holidays, candles, error) -> Void in
+        NetworkController.fetchBasedOnZip(zip) { (holidays, candles, parshas, error) -> Void in
             if let candles = candles {
-                print("Candles: \(candles.count)")
+                print("\nCandles: \(candles.count)")
+                for candle in candles {
+                    print(candle.stringDate())
+                }
+                
+            }
+            if let holidays = holidays {
+                print("\nHolidays: \(holidays.count)")
+                for holiday in holidays {
+                    print(holiday.name)
+                    print(holiday.date)
+                }
+            }
+            if let parshas = parshas {
+                print("\nParshas: \(parshas.count)")
+                for parsha in parshas {
+                    print(parsha.date)
+                    print(parsha.title)
+                }
             }
         }
         
@@ -52,12 +73,14 @@ class LabelViewController: UIViewController {
             
             self.map.setRegion(region, animated: true)
             self.map.addAnnotation(anotation)
-            
-            
-            LocationController.sharedInsance.addressFromLocation(location, completion: { (stringLocation, zip) -> Void in
-                self.addressLabel.text = stringLocation
-            })
-            
+        }
+        
+        if let address = NSUserDefaults.standardUserDefaults().valueForKey("addressString") as? String {
+            self.addressLabel.text = address
+        }
+        
+        if let zip = NSUserDefaults.standardUserDefaults().valueForKey("homeZip") as? String {
+            self.zip = zip
         }
         
         if let buffer = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime"){

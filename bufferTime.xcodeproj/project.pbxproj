@@ -33,6 +33,7 @@
 		1FAA94351C29019700CA200C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94341C29019700CA200C /* LocationController.swift */; };
 		BB319D691C4C5D26006ADEF5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D681C4C5D26006ADEF5 /* Home.swift */; };
 		BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */; };
+		BB7E3C1E1C4CB41A00BF27FB /* Parsha.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E3C1D1C4CB41A00BF27FB /* Parsha.swift */; };
 		BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */; };
 		BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06A91C4478AB000E6BAA /* SettingsController.swift */; };
 		BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06AB1C448B04000E6BAA /* questions.swift */; };
@@ -67,6 +68,7 @@
 		1FAA94341C29019700CA200C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = ../LocationController.swift; sourceTree = "<group>"; };
 		BB319D681C4C5D26006ADEF5 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceController.swift; sourceTree = "<group>"; };
+		BB7E3C1D1C4CB41A00BF27FB /* Parsha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsha.swift; sourceTree = "<group>"; };
 		BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		BBBA06A91C4478AB000E6BAA /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BBBA06AB1C448B04000E6BAA /* questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				1FAA94321C28D91000CA200C /* Candle.swift */,
 				1FAA94301C28CAAB00CA200C /* Holiday.swift */,
 				BB319D681C4C5D26006ADEF5 /* Home.swift */,
+				BB7E3C1D1C4CB41A00BF27FB /* Parsha.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */,
+				BB7E3C1E1C4CB41A00BF27FB /* Parsha.swift in Sources */,
 				BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */,
 				1FAA941D1C28C48C00CA200C /* AppDelegate.swift in Sources */,
 				1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */,

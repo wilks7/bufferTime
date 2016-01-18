@@ -15,6 +15,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     static let sharedInsance = LocationController()
     private var locationManager  = CLLocationManager()
+    var currentLocationCoord: [String:Double]?
     
     func getCurrentLocation() {
         locationManager.delegate = self
@@ -23,6 +24,18 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
     
+    
+    func getTrafficTime(completion:(time: String?, error: NSError?)->Void){
+        
+        guard let destination = NSUserDefaults.standardUserDefaults().valueForKey("addressCoordinates") as? [String : Double] else {completion(time: nil, error: nil); return}
+        
+        guard let origin = currentLocationCoord else {completion(time: nil, error: nil); print("Cant get traffic because cant get current location"); return}
+        
+        NetworkController.googleMapsDirections(origin, destination: destination) { (time, trafficTime, error) -> Void in
+            completion(time: time, error: nil)
+        }
+        
+    }
     
     // MARK: - String Work
     func addressFromLocation(location: CLLocation, completion:(stringLocation: String, zip: String)->Void){
@@ -62,6 +75,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
         if let foundLocation = locations.first{
             
+            currentLocationCoord = foundLocation.coordinates
             addressFromLocation(foundLocation, completion: { (stringLocation, zip) -> Void in
                 NSNotificationCenter.defaultCenter().postNotificationName("locationUpdated", object: nil, userInfo: ["location":foundLocation, "stringLocation":stringLocation, "zip":zip])
             })
@@ -75,3 +89,15 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
 }
 
+extension CLLocation {
+    var coordinates: [String:Double] {
+        
+        var coord = [String : Double]()
+        let lat = self.coordinate.latitude
+        let lon = self.coordinate.longitude
+        coord["latitude"] = lat
+        coord["longitude"] = lon
+        
+        return coord
+    }
+}

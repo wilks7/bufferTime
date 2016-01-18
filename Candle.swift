@@ -6,12 +6,13 @@
 //  Created by Michael Wilkowski on 12/21/15.
 //  Copyright © 2015 JustWilks. All rights reserved.
 //
+// http://waracle.net/iphone-nsdateformatter-date-formatting-table/
 
 import Foundation
 
 class Candle {
     
-    let link = "http://waracle.net/iphone-nsdateformatter-date-formatting-table/"
+    
     
     var time: String = ""
     var date: NSDate = NSDate()
@@ -27,15 +28,8 @@ class Candle {
     }
     
     func trimDate(dateString: String)->String{
-        print("")
-                
         
         var myString = dateString.stringByReplacingOccurrencesOfString("T", withString: " ")
-        
-        let format = NSDateFormatter()
-
-        
-        print(myString)
         
         
         var dateArray = Array(myString.characters)
@@ -46,6 +40,13 @@ class Candle {
         
         let dateStringR = String(datee)
         return dateStringR
+    }
+    
+    func stringDate() -> String{
+        let format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = format.stringFromDate(self.date)
+        return myString
     }
     
     func dateFormatter(date: String) -> NSDate {

@@ -22,38 +22,35 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var minutePicker: UIPickerView!
     
     @IBAction func nextTapped(sender: AnyObject) {
+        
+        let bufferTime = self.pickerToTime()
+        NSUserDefaults.standardUserDefaults().setValue(bufferTime, forKey: "bufferTime")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "allSettings")
+        
         let address = createAddress()
+        
         LocationController.locationFromAddress(address) { (location, placemark) -> Void in
             
             if let location = location {
                 
-                var coord = [String : Double]()
-                let lat = location.coordinate.latitude as? Double
-                let lon = location.coordinate.longitude as? Double
-                coord["latitude"] = lat
-                coord["longitude"] = lon
-                
-                NSUserDefaults.standardUserDefaults().setValue(coord, forKey: "addressCoordinates")
-                                
-            }else{
-                print("no found location")
-            }
-            
-            let bufferTime = self.pickerToTime()
-            NSUserDefaults.standardUserDefaults().setValue(bufferTime, forKey: "bufferTime")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "allSettings")
-            
-            
-            if self.firstUser{
-                self.firstUser = false
-                self.performSegueWithIdentifier("correct", sender: nil)
-            } else {
-                self.dismissViewControllerAnimated(true, completion: nil)
-                
+                LocationController.sharedInsance.addressFromLocation(location, completion: { (stringLocation, zip) -> Void in
+                    NSUserDefaults.standardUserDefaults().setValue(stringLocation, forKey: "addressString")
+                    NSUserDefaults.standardUserDefaults().setValue(zip, forKey: "homeZip")
+                    
+                    let coord = location.coordinates
+                    
+                    NSUserDefaults.standardUserDefaults().setValue(coord, forKey: "addressCoordinates")
+                    
+                    if self.firstUser{
+                        self.firstUser = false
+                        self.performSegueWithIdentifier("correct", sender: nil)
+                    } else {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                    }
+                })
             }
         }
-        
-        
     }
     
     override func viewDidLoad() {
