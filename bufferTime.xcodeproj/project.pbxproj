@@ -31,6 +31,10 @@
 		1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94301C28CAAB00CA200C /* Holiday.swift */; };
 		1FAA94331C28D91000CA200C /* Candle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94321C28D91000CA200C /* Candle.swift */; };
 		1FAA94351C29019700CA200C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA94341C29019700CA200C /* LocationController.swift */; };
+		1FC8259E1C4EBB5F00199B28 /* MGS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FC8259D1C4EBB5F00199B28 /* MGS.mp3 */; };
+		1FC825A01C4EBE4500199B28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8259F1C4EBE4500199B28 /* AVFoundation.framework */; };
+		1FC825A21C4EBE5D00199B28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC825A11C4EBE5D00199B28 /* UIKit.framework */; };
+		1FC825A41C4EBE6700199B28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC825A31C4EBE6700199B28 /* Foundation.framework */; };
 		BB319D691C4C5D26006ADEF5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D681C4C5D26006ADEF5 /* Home.swift */; };
 		BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */; };
 		BB7E3C1E1C4CB41A00BF27FB /* Parsha.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E3C1D1C4CB41A00BF27FB /* Parsha.swift */; };
@@ -66,6 +70,10 @@
 		1FAA94301C28CAAB00CA200C /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Holiday.swift; path = ../Holiday.swift; sourceTree = "<group>"; };
 		1FAA94321C28D91000CA200C /* Candle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candle.swift; path = ../Candle.swift; sourceTree = "<group>"; };
 		1FAA94341C29019700CA200C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = ../LocationController.swift; sourceTree = "<group>"; };
+		1FC8259D1C4EBB5F00199B28 /* MGS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MGS.mp3; sourceTree = "<group>"; };
+		1FC8259F1C4EBE4500199B28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1FC825A11C4EBE5D00199B28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1FC825A31C4EBE6700199B28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB319D681C4C5D26006ADEF5 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BB319D6A1C4C6E86006ADEF5 /* AppearenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceController.swift; sourceTree = "<group>"; };
 		BB7E3C1D1C4CB41A00BF27FB /* Parsha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsha.swift; sourceTree = "<group>"; };
@@ -79,6 +87,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC825A41C4EBE6700199B28 /* Foundation.framework in Frameworks */,
+				1FC825A21C4EBE5D00199B28 /* UIKit.framework in Frameworks */,
+				1F9B92D31C49AADF00E5FE19 /* CoreGraphics.framework in Frameworks */,
+				1FC825A01C4EBE4500199B28 /* AVFoundation.framework in Frameworks */,
 				1F9B92E11C49AB3600E5FE19 /* libsqlite3.tbd in Frameworks */,
 				1F9B92DF1C49AB2C00E5FE19 /* libz.tbd in Frameworks */,
 				1F9B92DD1C49AB0600E5FE19 /* SystemConfiguration.framework in Frameworks */,
@@ -86,7 +98,6 @@
 				1F9B92D91C49AAF400E5FE19 /* Security.framework in Frameworks */,
 				1F9B92D71C49AAED00E5FE19 /* QuartzCore.framework in Frameworks */,
 				1F9B92D51C49AAE600E5FE19 /* CoreLocation.framework in Frameworks */,
-				1F9B92D31C49AADF00E5FE19 /* CoreGraphics.framework in Frameworks */,
 				1F9B92D11C49AAC200E5FE19 /* CFNetwork.framework in Frameworks */,
 				1F9B92CF1C49AAB600E5FE19 /* AudioToolbox.framework in Frameworks */,
 				1F9B92CC1C49A85900E5FE19 /* Parse.framework in Frameworks */,
@@ -142,6 +153,9 @@
 		1FAA94101C28C48C00CA200C = {
 			isa = PBXGroup;
 			children = (
+				1FC825A31C4EBE6700199B28 /* Foundation.framework */,
+				1FC825A11C4EBE5D00199B28 /* UIKit.framework */,
+				1FC8259F1C4EBE4500199B28 /* AVFoundation.framework */,
 				1FAA941B1C28C48C00CA200C /* bufferTime */,
 				1FAA941A1C28C48C00CA200C /* Products */,
 			);
@@ -166,6 +180,7 @@
 				BBBA06AB1C448B04000E6BAA /* questions.swift */,
 				1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */,
 				1FAA94201C28C48C00CA200C /* Main.storyboard */,
+				1FC8259D1C4EBB5F00199B28 /* MGS.mp3 */,
 				1FAA94231C28C48C00CA200C /* Assets.xcassets */,
 				1FAA94251C28C48C00CA200C /* LaunchScreen.storyboard */,
 				1FAA94281C28C48C00CA200C /* Info.plist */,
@@ -217,6 +232,9 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = X83T84WPSN;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -247,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC8259E1C4EBB5F00199B28 /* MGS.mp3 in Resources */,
 				1FAA94271C28C48C00CA200C /* LaunchScreen.storyboard in Resources */,
 				1FAA94241C28C48C00CA200C /* Assets.xcassets in Resources */,
 				1FAA94221C28C48C00CA200C /* Main.storyboard in Resources */,
@@ -392,7 +411,7 @@
 					"$(PROJECT_DIR)/bufferTime",
 				);
 				INFOPLIST_FILE = bufferTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justwilks.bufferTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,7 +428,7 @@
 					"$(PROJECT_DIR)/bufferTime",
 				);
 				INFOPLIST_FILE = bufferTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justwilks.bufferTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

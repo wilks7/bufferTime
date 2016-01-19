@@ -44,16 +44,17 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func timeToLeave(travelTime: Int){
-        let shabbosTime: NSDate? = NSDate().dateByAddingTimeInterval(1800)
+        let shabbosTime: NSDate? = NSDate().dateByAddingTimeInterval(28800)
         guard let prepTime = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime") as? NSTimeInterval else {return}
-        let arrivalTime = shabbosTime?.dateByAddingTimeInterval(-prepTime)
+        let arrivalTime = shabbosTime?.dateByAddingTimeInterval(prepTime*(-1))
         let myTravelTime: NSTimeInterval = NSTimeInterval(Int(travelTime))
-        let departureTime = arrivalTime?.dateByAddingTimeInterval(-myTravelTime)
+        let departureTime = arrivalTime?.dateByAddingTimeInterval(myTravelTime*(-1))
         let currentTime = NSDate()
         
-        let timeLeft: NSTimeInterval = currentTime.timeIntervalSinceDate(departureTime!)
-        if timeLeft > myTravelTime {
-            
+        let timeInt = Int(departureTime!.timeIntervalSinceDate(currentTime))
+        let timeLeft: NSTimeInterval = NSTimeInterval(Int(timeInt))
+        if timeLeft.advancedBy(1800) > myTravelTime {
+            print("You should leave by \(departureTime)")
         }
         
     }

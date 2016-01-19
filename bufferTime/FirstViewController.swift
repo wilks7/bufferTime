@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import CoreLocation
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -19,11 +20,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func manualButtonTapped(sender: AnyObject) {
+        SettingsController.sharedController.playSound()
         LocationController.sharedInsance.getCurrentLocation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
         
 //        let dummy = ["dummy":45.55]
 //        NetworkController.googleMapsDirections(dummy, destination: dummy) { (time, trafficTime, error) -> Void in
@@ -45,7 +49,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         LocationController.sharedInsance.getCurrentLocation()
-        notificationTest()
+        //notificationTest()
         
     }
 
