@@ -24,7 +24,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
-        
     }
     
     

@@ -93,32 +93,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFPush.handlePush(userInfo)
         print("push it")
         SettingsController.sharedController.playSound()
-        
-        if application.applicationState == UIApplicationState.Inactive {
-            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
-            print("push it real good")
-        }
     }
-//
+
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         PFPush.handlePush(userInfo)
         print("push it")
-        SettingsController.sharedController.playSound()
+        //set timer for every 30min to call:
+        //LocationController.sharedInsance.getCurrentLocation()
         completionHandler(UIBackgroundFetchResult.NoData)
         
-        if application.applicationState == UIApplicationState.Inactive {
-            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
-            print("push it real good")
-        }
-        
         switch application.applicationState {
-        case .Inactive:
-            print("App is inactive")
-        case .Background:
-            print("App is running in background")
-        case .Active:
-            print("App is Open")
+            case .Inactive:
+                print("App is inactive")
+                let testObj = PFObject(className: "Testee")
+                testObj["mike"] = "Wilks"
+                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+                    print("Saved")
+                }
+            case .Background:
+                print("App is running in background")
+            case .Active:
+                print("App is Open")
         }
     }
 }
