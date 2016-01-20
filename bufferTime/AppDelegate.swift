@@ -102,13 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
-        let testObj = PFObject(className: "Testing")
-        testObj["michael"] = "Wilks"
-        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-            print("Saved")
-        }
-        
-        
         PFPush.handlePush(userInfo)
         print("push it")
         SettingsController.sharedController.playSound()
@@ -117,6 +110,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
             print("push it real good")
+        }
+        
+        switch application.applicationState {
+        case .Inactive:
+            print("App is inactive")
+        case .Background:
+            print("App is running in background")
+        case .Active:
+            print("App is Open")
         }
     }
 }
