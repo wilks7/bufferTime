@@ -46,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if application.applicationState ==  .Inactive{
-        print("App is inactive")
-        let testObj = PFObject(className: "Testing")
-        testObj["state"] = "InactiveFinish"
-        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-            print("Saved")
+            print("App is inactive")
+            let testObj = PFObject(className: "Testing")
+            testObj["state"] = "InactiveFinish"
+            testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+                print("Saved")
             }
         }
         
@@ -108,7 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFPush.handlePush(userInfo)
         print("push it")
-        //set timer for every 30min to call:
+        LocationController.sharedController.locationManager.delegate = LocationController.sharedController
+        LocationController.sharedController.locationManager.distanceFilter = 10
         LocationController.sharedController.locationManager.startUpdatingLocation()
         
 //        let testObj = PFObject(className: "Testing")
