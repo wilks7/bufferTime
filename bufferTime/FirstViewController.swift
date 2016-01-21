@@ -23,6 +23,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func manualButtonTapped(sender: AnyObject) {
         SettingsController.sharedController.playSound()
+        
+        LocationController.sharedController.locationManager.delegate = LocationController.sharedController
+        LocationController.sharedController.locationManager.distanceFilter = 10
+        LocationController.sharedController.locationManager.startUpdatingLocation()
+
     }
     
     override func viewDidLoad() {

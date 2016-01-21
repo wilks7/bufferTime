@@ -20,21 +20,18 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     var trafficTime : Int?
     
     
-    func getTrafficTime(completion:(time: Int?, error: NSError?)->Void) {
+    func getTrafficTime(origin: [String:Double],completion:(time: Int?, error: NSError?)->Void) {
         
         guard let destination = NSUserDefaults.standardUserDefaults().valueForKey("addressCoordinates") as? [String : Double] else { completion(time: nil, error: nil);
             return }
         
-        if let origin = currentLocationCoord{
             NetworkController.googleMapsDirections(origin, destination: destination) { (time, trafficTime, error) -> Void in
                 if let time = time {
                     self.timeToLeave(time)
                     completion(time: time, error: nil)
                 }
             }
-        } else {
-            print("couldnt get current location")
-        }
+
     }
     
     func timeToLeave(travelTime: Int) {
@@ -62,12 +59,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func getCandleTime()->NSDate?{
-        guard let allCandlesDic = NSUserDefaults.standardUserDefaults().valueForKey("candlesDic") as? [[String:AnyObject]] else { return nil}
+        guard let allCandlesDic = NSUserDefaults.standardUserDefaults().valueForKey("allCandles") as? [[String:AnyObject]] else { return nil}
         let candles:[Candle] = allCandlesDic.map({Candle(dicNS: $0)})
         
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyy-MM-dd"
-        let todayString = formatter.stringFromDate(NSDate())
+        formatter.dateFormat = "yyyy-MM-dd"
+        //let todayString = formatter.stringFromDate(NSDate())
+        let todayString = "2016-01-22"
         
         for candle in candles {
             let date = candle.date
@@ -85,19 +83,17 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
         print("location found")
             
-        if !hasLocation {
-            hasLocation = true
             if let foundLocation = locations.first{
                 
                 currentLocationCoord = foundLocation.coordinates
-                getTrafficTime({ (time, error) -> Void in
+                
+                getTrafficTime(foundLocation.coordinates, completion: { (time, error) -> Void in
                     if let time = time {
                         self.trafficTime = time
                         self.timeToLeave(time)
                     }
                 })
             }
-        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

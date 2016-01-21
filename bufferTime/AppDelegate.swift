@@ -109,10 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFPush.handlePush(userInfo)
         print("push it")
         //set timer for every 30min to call:
-        //LocationController.sharedInsance.getCurrentLocation()
-        LocationController.sharedController.getTrafficTime { (time, error) -> Void in
-            print(time)
-        }
+        LocationController.sharedController.locationManager.startUpdatingLocation()
         
 //        let testObj = PFObject(className: "Testing")
 //        testObj["state"] = "Made it to start of switch"
