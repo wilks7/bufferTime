@@ -27,6 +27,16 @@ class Candle {
         self.date = dateFormatter(trimmed)
     }
     
+    init(dicNS:[String:AnyObject]){
+        guard let time = dicNS["time"] as? String, let date = dicNS["date"] as? NSDate else {return}
+        self.time = time
+        self.date = date
+    }
+    
+    func dictionaryCopy()->[String:AnyObject]{
+        return ["time":time,"date": date]
+    }
+    
     func trimDate(dateString: String)->String{
         
         var myString = dateString.stringByReplacingOccurrencesOfString("T", withString: " ")

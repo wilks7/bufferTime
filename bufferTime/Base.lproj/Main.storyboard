@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFH-0g-utd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="home address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFH-0g-utd">
                                 <rect key="frame" x="20" y="80" width="560" height="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -27,14 +27,14 @@
                                     <outlet property="delegate" destination="ML8-kQ-gq0" id="iZu-E5-hZ7"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vh-cn-Bwy" userLabel="addresLine">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vh-cn-Bwy" userLabel="addresLine">
                                 <rect key="frame" x="20" y="104" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="hoC-65-CQD"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkf-oc-YC2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkf-oc-YC2">
                                 <rect key="frame" x="20" y="140" width="560" height="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -43,7 +43,7 @@
                                     <outlet property="delegate" destination="ML8-kQ-gq0" id="HWm-2M-qQF"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNp-qe-avB" userLabel="zipLine">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNp-qe-avB" userLabel="zipLine">
                                 <rect key="frame" x="20" y="164" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -51,7 +51,7 @@
                                 </constraints>
                             </view>
                             <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="bN9-E9-8mV">
-                                <rect key="frame" x="343" y="241" width="140" height="216"/>
+                                <rect key="frame" x="318" y="241" width="165" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ML8-kQ-gq0" id="Wug-Kj-IlP"/>
                                     <outlet property="delegate" destination="ML8-kQ-gq0" id="WwD-DI-3Wn"/>
@@ -100,7 +100,7 @@
                             <constraint firstItem="Zf0-my-LFo" firstAttribute="top" secondItem="geN-tv-dWM" secondAttribute="bottom" constant="-118" id="LwP-jx-qjE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m1S-fB-IwD" secondAttribute="trailing" constant="28" id="PWu-h8-GgV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pkf-oc-YC2" secondAttribute="trailing" id="SfQ-si-Akw"/>
-                            <constraint firstItem="Zf0-my-LFo" firstAttribute="width" secondItem="bN9-E9-8mV" secondAttribute="width" id="VSX-O1-CzU"/>
+                            <constraint firstItem="Zf0-my-LFo" firstAttribute="width" secondItem="bN9-E9-8mV" secondAttribute="width" constant="-25" id="VSX-O1-CzU"/>
                             <constraint firstItem="Aoh-65-DY4" firstAttribute="top" secondItem="bN9-E9-8mV" secondAttribute="bottom" constant="143" id="VmH-cS-JX7"/>
                             <constraint firstItem="geN-tv-dWM" firstAttribute="leading" secondItem="Zf0-my-LFo" secondAttribute="trailing" constant="8" id="Z2B-Nd-jtn"/>
                             <constraint firstItem="2vh-cn-Bwy" firstAttribute="centerX" secondItem="sFH-0g-utd" secondAttribute="centerX" id="ZFJ-ga-iXz"/>
@@ -112,7 +112,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="sFH-0g-utd" secondAttribute="trailing" id="isV-U0-oGA"/>
                             <constraint firstItem="aNp-qe-avB" firstAttribute="centerX" secondItem="pkf-oc-YC2" secondAttribute="centerX" id="lgi-UE-n3I"/>
                             <constraint firstItem="Aoh-65-DY4" firstAttribute="top" secondItem="Zf0-my-LFo" secondAttribute="bottom" constant="143" id="mye-At-8lq"/>
-                            <constraint firstItem="bN9-E9-8mV" firstAttribute="leading" secondItem="geN-tv-dWM" secondAttribute="trailing" constant="85" id="nQG-jV-5cj"/>
+                            <constraint firstItem="bN9-E9-8mV" firstAttribute="leading" secondItem="geN-tv-dWM" secondAttribute="trailing" constant="60" id="nQG-jV-5cj"/>
                             <constraint firstItem="Aoh-65-DY4" firstAttribute="top" secondItem="Jf2-Lv-Kvl" secondAttribute="bottom" constant="34" id="nuo-nN-zMb"/>
                             <constraint firstItem="Zf0-my-LFo" firstAttribute="leading" secondItem="zZY-gw-xqg" secondAttribute="leadingMargin" constant="46" id="sQY-3p-PPz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pkf-oc-YC2" secondAttribute="leading" id="v2v-nK-oG5"/>
@@ -122,6 +122,7 @@
                     <navigationItem key="navigationItem" id="8Ca-9z-nGO"/>
                     <connections>
                         <outlet property="addressTextfield" destination="sFH-0g-utd" id="UeW-bh-cGo"/>
+                        <outlet property="buttonOutlet" destination="Jf2-Lv-Kvl" id="cqk-ii-d9Q"/>
                         <outlet property="hourPicker" destination="Zf0-my-LFo" id="nZV-hp-wVx"/>
                         <outlet property="minutePicker" destination="bN9-E9-8mV" id="PBI-Wc-MMZ"/>
                         <outlet property="zipTextfield" destination="pkf-oc-YC2" id="aHQ-0e-DG8"/>
@@ -208,6 +209,8 @@
                     <connections>
                         <outlet property="addressLabel" destination="Goe-sg-8iy" id="0Tm-MD-Thv"/>
                         <outlet property="map" destination="avz-m8-jKE" id="8aI-Tv-hYq"/>
+                        <outlet property="resetButtonOutlet" destination="zlB-f9-kAN" id="3tM-XF-W5T"/>
+                        <outlet property="saveButtonOutlet" destination="1sZ-rJ-O73" id="HSf-eM-eNo"/>
                         <outlet property="timeLabel" destination="N8n-I1-YwR" id="RNQ-7B-ma2"/>
                     </connections>
                 </viewController>
@@ -268,7 +271,7 @@
                                         <rect key="frame" x="0.0" y="28" width="502" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25Q-VX-fyq" id="ryd-QY-TNv">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
@@ -278,7 +281,7 @@
                                         <rect key="frame" x="0.0" y="72" width="502" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBM-CD-E8Y" id="YFw-Ec-axG">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
@@ -288,7 +291,7 @@
                                         <rect key="frame" x="0.0" y="116" width="502" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xRu-nR-WBq" id="GUB-PG-rIS">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>

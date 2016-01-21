@@ -13,6 +13,8 @@ class CandleController {
     
     static let sharedController = CandleController()
     
+    var allCandles:[Candle] = []
+    
     var todayCandle: NSDate?
     
     func setNotification(fireDate: NSDate) {

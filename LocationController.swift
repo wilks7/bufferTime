@@ -38,20 +38,46 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func timeToLeave(travelTime: Int) {
-        let shabbosTime: NSDate? = NSDate().dateByAddingTimeInterval(28800)
+        guard let shabbosTime = getCandleTime() else {return}
+        
         guard let prepTime = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime") as? NSTimeInterval else { return }
-        let arrivalTime = shabbosTime?.dateByAddingTimeInterval(prepTime*(-1))
+        let arrivalTime = shabbosTime.dateByAddingTimeInterval(prepTime*(-1))
         let myTravelTime: NSTimeInterval = NSTimeInterval(Int(travelTime))
-        let departureTime = arrivalTime?.dateByAddingTimeInterval(myTravelTime*(-1))
+        let departureTime = arrivalTime.dateByAddingTimeInterval(myTravelTime*(-1))
         let currentTime = NSDate()
         
-        let timeInt = Int(departureTime!.timeIntervalSinceDate(currentTime))
+        let timeInt = Int(departureTime.timeIntervalSinceDate(currentTime))
         let timeLeft: NSTimeInterval = NSTimeInterval(Int(timeInt))
         if timeLeft.advancedBy(1800) > myTravelTime {
             print("You should leave by \(departureTime)")
+            
+            let leaveAlert = UILocalNotification()
+            leaveAlert.fireDate = NSDate()
+            leaveAlert.alertBody = "Shabbos is Coming! Leave by: \(departureTime)"
+            leaveAlert.alertAction = "Leave"
+            leaveAlert.soundName = UILocalNotificationDefaultSoundName
+            leaveAlert.timeZone = NSTimeZone.localTimeZone()
+            UIApplication.sharedApplication().scheduleLocalNotification(leaveAlert)
         }
     }
     
+    func getCandleTime()->NSDate?{
+        guard let allCandlesDic = NSUserDefaults.standardUserDefaults().valueForKey("candlesDic") as? [[String:AnyObject]] else { return nil}
+        let candles:[Candle] = allCandlesDic.map({Candle(dicNS: $0)})
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyy-MM-dd"
+        let todayString = formatter.stringFromDate(NSDate())
+        
+        for candle in candles {
+            let date = candle.date
+            let dateString = formatter.stringFromDate(date)
+            if dateString == todayString{
+                return date
+            }
+        }
+        return nil
+    }
     
     //MARK: - CoreLocation Delegate
     

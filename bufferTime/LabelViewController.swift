@@ -19,9 +19,12 @@ class LabelViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var saveButtonOutlet: UIButton!
+    
+    @IBOutlet weak var resetButtonOutlet: UIButton!
+    
     var zip = ""
     
-    //var address = ""
     
     @IBAction func resetButtonTapped(sender: AnyObject) {
     }
@@ -29,6 +32,9 @@ class LabelViewController: UIViewController {
     @IBAction func saveButtonTapped(sender: AnyObject) {
         NetworkController.fetchBasedOnZip(zip) { (holidays, candles, parshas, error) -> Void in
             if let candles = candles {
+                CandleController.sharedController.allCandles = candles
+                let candlesDic:[[String:AnyObject]] = candles.map({$0.dictionaryCopy()})
+                NSUserDefaults.standardUserDefaults().setValue(candlesDic, forKey: "allCandles")
                 print("\nCandles: \(candles.count)")
                 for candle in candles {
                     print(candle.stringDate())
@@ -97,9 +103,21 @@ class LabelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.map.layer.borderWidth = 2
+        setupButtons()
+    }
+    
+    func setupButtons(){
+        self.map.layer.borderWidth = 1
         self.map.layer.borderColor = UIColor.whiteColor().CGColor
         self.map.layer.cornerRadius = 5
+        
+        saveButtonOutlet.layer.borderWidth = 1
+        saveButtonOutlet.layer.borderColor = UIColor.whiteColor().CGColor
+        saveButtonOutlet.layer.cornerRadius = 5
+        
+        resetButtonOutlet.layer.borderWidth = 1
+        resetButtonOutlet.layer.borderColor = UIColor.whiteColor().CGColor
+        resetButtonOutlet.layer.cornerRadius = 5
     }
 
 }

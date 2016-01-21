@@ -47,35 +47,32 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
         LocationController.sharedController.locationManager.requestAlwaysAuthorization()
         
-        let alert = UIAlertController(title: "Settings", message: "We will only send you a notification when it is time to leaev and will only use your location for checking traffic times", preferredStyle: .Alert)
-        let okButton = UIAlertAction(title: "OK", style: .Default) { (_) -> Void in
-            if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
-                if !(notificationSettings.types.contains(.Alert)) || !(notificationSettings.types.contains(.Sound)){
-                    self.performSegueWithIdentifier("turnOnSettings", sender: true)
-                }
-                if (CLLocationManager.authorizationStatus() == .Denied || CLLocationManager.authorizationStatus() == .Restricted || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse) {
-                    self.performSegueWithIdentifier("turnOnSettings", sender: false)
+        if !checkSettings(){
+        
+            let alert = UIAlertController(title: "Settings", message: "We will only send you a notification when it is time to leaev and will only use your location for checking traffic times", preferredStyle: .Alert)
+            let okButton = UIAlertAction(title: "OK", style: .Default) { (_) -> Void in
+                if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
+                    if !(notificationSettings.types.contains(.Alert)) || !(notificationSettings.types.contains(.Sound)){
+                        self.performSegueWithIdentifier("turnOnSettings", sender: true)
+                    }
+                    if (CLLocationManager.authorizationStatus() == .Denied || CLLocationManager.authorizationStatus() == .Restricted || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse) {
+                        self.performSegueWithIdentifier("turnOnSettings", sender: false)
+                    }
                 }
             }
+            alert.addAction(okButton)
+            presentViewController(alert, animated: true, completion: nil)
         }
-        alert.addAction(okButton)
-        presentViewController(alert, animated: true, completion: nil)
     }
     
-    func checkSettings(){
-        if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
-            if !(notificationSettings.types.contains(.Alert)) || !(notificationSettings.types.contains(.Sound)){
-                self.performSegueWithIdentifier("turnOnSettings", sender: true)
-            }
-        }
+    func checkSettings()->Bool{
+        guard let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() else {return false}
         
-        switch CLLocationManager.authorizationStatus() {
-        case .AuthorizedAlways:
-            print("location settings good")
-        case .NotDetermined:
-            LocationController.sharedController.locationManager.requestAlwaysAuthorization()
-        case .Denied, .Restricted, .AuthorizedWhenInUse:
-            self.performSegueWithIdentifier("turnOnSettings", sender: false)
+                
+        if (CLLocationManager.authorizationStatus() == .AuthorizedAlways) && ((notificationSettings.types.contains(.Alert)) && (notificationSettings.types.contains(.Sound))) {
+            return true
+        } else {
+            return false
         }
     }
     

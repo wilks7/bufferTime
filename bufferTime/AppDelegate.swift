@@ -114,34 +114,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(time)
         }
         
-        let testObj = PFObject(className: "Testing")
-        testObj["state"] = "Made it to start of switch"
-        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-            print("Saved")
-        }
-        
-        switch application.applicationState {
-            case .Inactive:
-                print("App is inactive")
-                let testObj = PFObject(className: "Testing")
-                testObj["state"] = "inactive"
-                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-                    print("Saved")
-                }
-            case .Background:
-                let testObj = PFObject(className: "Testing")
-                testObj["state"] = "background"
-                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-                    print("Saved")
-                }
-            case .Active:
-                let testObj = PFObject(className: "Testing")
-                testObj["state"] = "Active"
-                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-                    print("Saved")
-                }
-
-        }
+//        let testObj = PFObject(className: "Testing")
+//        testObj["state"] = "Made it to start of switch"
+//        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+//            print("Saved")
+//        }
+//        
+//        switch application.applicationState {
+//            case .Inactive:
+//                print("App is inactive")
+//                let testObj = PFObject(className: "Testing")
+//                testObj["state"] = "inactive"
+//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+//                    print("Saved")
+//                }
+//            case .Background:
+//                let testObj = PFObject(className: "Testing")
+//                testObj["state"] = "background"
+//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+//                    print("Saved")
+//                }
+//            case .Active:
+//                let testObj = PFObject(className: "Testing")
+//                testObj["state"] = "Active"
+//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+//                    print("Saved")
+//                }
+//
+//        }
         
         completionHandler(UIBackgroundFetchResult.NoData)
     }

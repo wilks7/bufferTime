@@ -13,6 +13,16 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     var firstUser = false
     
+    private var minuteData:[Int] {
+        var source:[Int] = []
+        var temp = 0
+        for i in 0...60{
+            source.append(temp)
+            temp+=5
+        }
+        return source
+    }
+    
     @IBOutlet weak var addressTextfield: UITextField!
     
     @IBOutlet weak var zipTextfield: UITextField!
@@ -20,6 +30,7 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var hourPicker: UIPickerView!
 
     @IBOutlet weak var minutePicker: UIPickerView!
+    @IBOutlet weak var buttonOutlet: UIButton!
     
     @IBAction func nextTapped(sender: AnyObject) {
         
@@ -55,7 +66,9 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        buttonOutlet.layer.borderWidth = 1
+        buttonOutlet.layer.borderColor = UIColor.whiteColor().CGColor
+        buttonOutlet.layer.cornerRadius = 5
     }
     
     func createAddress()->String{
@@ -69,7 +82,7 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func pickerToTime()->NSTimeInterval{
         let hours = hourPicker.selectedRowInComponent(0)
-        let totalMinutes = minutePicker.selectedRowInComponent(0) + (hours * 60)
+        let totalMinutes = minuteData[minutePicker.selectedRowInComponent(0)] + (hours * 60)
         let totalSeconds = NSTimeInterval(totalMinutes * 60)
         
         return totalSeconds
@@ -83,16 +96,30 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == hourPicker{
-            return 12
+            return 8
         }else{
-            return 60
+            return 12
         }
     }
     
     // MARK: - Picker Delegate
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(row)
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return String(row)
+//    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        if pickerView == minutePicker{
+            let titleData = minuteData[row]
+            var myTitle = NSAttributedString(string: String(titleData), attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 12.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+            return myTitle
+
+        } else {
+            let titleData = row
+            var myTitle = NSAttributedString(string: String(titleData), attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 12.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+            return myTitle
+        }
     }
     
     // MARK: TextField Delegate 
