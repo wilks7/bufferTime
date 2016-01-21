@@ -14,6 +14,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    static let sharedInstance = FirstViewController()
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -21,40 +23,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func manualButtonTapped(sender: AnyObject) {
         SettingsController.sharedController.playSound()
-        LocationController.sharedInsance.getCurrentLocation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        
-//        let dummy = ["dummy":45.55]
-//        NetworkController.googleMapsDirections(dummy, destination: dummy) { (time, trafficTime, error) -> Void in
-//            guard let time = time, let trafficTime = trafficTime else {return}
-//            print(time)
-//            print(trafficTime)
-//            print("")
-//        }
-        
-        
         tableViewOutlet.layer.borderWidth = 2.5
         tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
         tableViewOutlet.layer.cornerRadius = 5
-        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "intervalUpdate", name: "updateInterval", object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleNotification:", name: "locationUpdated", object: nil)
-
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
-        
-        
-        LocationController.sharedInsance.getCurrentLocation()
-        //notificationTest()
-        
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        alertCheckSettings()
         if !(SettingsController.sharedController.checkNS()){
             self.performSegueWithIdentifier("firstUser", sender: nil)
             print("no device settings")
@@ -63,26 +43,40 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func notificationTest(){
-        let date = NSDate()
+    func alertCheckSettings(){
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        LocationController.sharedController.locationManager.requestAlwaysAuthorization()
         
-        let format = NSDateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let alert = UIAlertController(title: "Settings", message: "We will only send you a notification when it is time to leaev and will only use your location for checking traffic times", preferredStyle: .Alert)
+        let okButton = UIAlertAction(title: "OK", style: .Default) { (_) -> Void in
+            if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
+                if !(notificationSettings.types.contains(.Alert)) || !(notificationSettings.types.contains(.Sound)){
+                    self.performSegueWithIdentifier("turnOnSettings", sender: true)
+                }
+                if (CLLocationManager.authorizationStatus() == .Denied || CLLocationManager.authorizationStatus() == .Restricted || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse) {
+                    self.performSegueWithIdentifier("turnOnSettings", sender: false)
+                }
+            }
+        }
+        alert.addAction(okButton)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func checkSettings(){
+        if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
+            if !(notificationSettings.types.contains(.Alert)) || !(notificationSettings.types.contains(.Sound)){
+                self.performSegueWithIdentifier("turnOnSettings", sender: true)
+            }
+        }
         
-        
-        let string = format.stringFromDate(date)
-        let myDate = format.dateFromString(string)
-        guard let dater = myDate else {return}
-        
-        let silentAlert = UILocalNotification()
-        silentAlert.fireDate = dater.dateByAddingTimeInterval(10)
-        silentAlert.userInfo = ["silent" : true]
-        silentAlert.alertBody = "Testing"
-        silentAlert.alertAction = "teeesstt"
-        silentAlert.soundName = UILocalNotificationDefaultSoundName
-        silentAlert.timeZone = NSTimeZone.localTimeZone()
-        UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
-        NSNotificationCenter.defaultCenter().postNotificationName("updateInterval", object: nil, userInfo: ["NStest":"thisIsTest"])
+        switch CLLocationManager.authorizationStatus() {
+        case .AuthorizedAlways:
+            print("location settings good")
+        case .NotDetermined:
+            LocationController.sharedController.locationManager.requestAlwaysAuthorization()
+        case .Denied, .Restricted, .AuthorizedWhenInUse:
+            self.performSegueWithIdentifier("turnOnSettings", sender: false)
+        }
     }
     
     // MARK: TableView DataSource
@@ -122,8 +116,42 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "firstUser"{
-            let dVC = segue.destinationViewController as! ChooseAddressViewController
+            let nav = segue.destinationViewController as! UINavigationController
+            let dVC = nav.viewControllers.first as! ChooseAddressViewController
             dVC.firstUser = true
+        } else if segue.identifier == "turnOnSettings"{
+            let dVC = segue.destinationViewController as! NoLocationSettingsViewController
+            guard let sender = sender as? Bool else {return}
+            
+            if sender{
+                dVC.viewMode = .Notifications
+            }
+            else{
+                dVC.viewMode = .Location
+            }
         }
+    }
+    
+    
+    func notificationTest(){
+        let date = NSDate()
+        
+        let format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        
+        let string = format.stringFromDate(date)
+        let myDate = format.dateFromString(string)
+        guard let dater = myDate else {return}
+        
+        let silentAlert = UILocalNotification()
+        silentAlert.fireDate = dater.dateByAddingTimeInterval(10)
+        silentAlert.userInfo = ["silent" : true]
+        silentAlert.alertBody = "Testing"
+        silentAlert.alertAction = "teeesstt"
+        silentAlert.soundName = UILocalNotificationDefaultSoundName
+        silentAlert.timeZone = NSTimeZone.localTimeZone()
+        UIApplication.sharedApplication().scheduleLocalNotification(silentAlert)
+        NSNotificationCenter.defaultCenter().postNotificationName("updateInterval", object: nil, userInfo: ["NStest":"thisIsTest"])
     }
 }

@@ -33,7 +33,7 @@ class ChooseAddressViewController: UIViewController, UIPickerViewDelegate, UIPic
             
             if let location = location {
                 
-                LocationController.sharedInsance.addressFromLocation(location, completion: { (stringLocation, zip) -> Void in
+                LocationController.sharedController.addressFromLocation(location, completion: { (stringLocation, zip) -> Void in
                     NSUserDefaults.standardUserDefaults().setValue(stringLocation, forKey: "addressString")
                     NSUserDefaults.standardUserDefaults().setValue(zip, forKey: "homeZip")
                     

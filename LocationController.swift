@@ -13,38 +13,33 @@ import MapKit
 
 class LocationController: NSObject, CLLocationManagerDelegate {
     
-    static let sharedInsance = LocationController()
-    private var locationManager  = CLLocationManager()
-    var currentLocationCoord: [String:Double]?
+    static let sharedController = LocationController()
+    var locationManager = CLLocationManager()
+    var currentLocationCoord: [String : Double]?
     var hasLocation = false
     var trafficTime : Int?
     
-    func getCurrentLocation() {
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
-    }
     
-    
-    func getTrafficTime(completion:(time: Int?, error: NSError?)->Void){
+    func getTrafficTime(completion:(time: Int?, error: NSError?)->Void) {
         
-        guard let destination = NSUserDefaults.standardUserDefaults().valueForKey("addressCoordinates") as? [String : Double] else {completion(time: nil, error: nil); return}
+        guard let destination = NSUserDefaults.standardUserDefaults().valueForKey("addressCoordinates") as? [String : Double] else { completion(time: nil, error: nil);
+            return }
         
         if let origin = currentLocationCoord{
             NetworkController.googleMapsDirections(origin, destination: destination) { (time, trafficTime, error) -> Void in
                 if let time = time {
+                    self.timeToLeave(time)
                     completion(time: time, error: nil)
                 }
-                
             }
+        } else {
+            print("couldnt get current location")
         }
-        
     }
     
-    func timeToLeave(travelTime: Int){
+    func timeToLeave(travelTime: Int) {
         let shabbosTime: NSDate? = NSDate().dateByAddingTimeInterval(28800)
-        guard let prepTime = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime") as? NSTimeInterval else {return}
+        guard let prepTime = NSUserDefaults.standardUserDefaults().valueForKey("bufferTime") as? NSTimeInterval else { return }
         let arrivalTime = shabbosTime?.dateByAddingTimeInterval(prepTime*(-1))
         let myTravelTime: NSTimeInterval = NSTimeInterval(Int(travelTime))
         let departureTime = arrivalTime?.dateByAddingTimeInterval(myTravelTime*(-1))
@@ -55,8 +50,35 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         if timeLeft.advancedBy(1800) > myTravelTime {
             print("You should leave by \(departureTime)")
         }
-        
     }
+    
+    
+    //MARK: - CoreLocation Delegate
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print("location found")
+            
+        if !hasLocation {
+            hasLocation = true
+            if let foundLocation = locations.first{
+                
+                currentLocationCoord = foundLocation.coordinates
+                getTrafficTime({ (time, error) -> Void in
+                    if let time = time {
+                        self.trafficTime = time
+                        self.timeToLeave(time)
+                    }
+                })
+            }
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+        print("Cant Get Current Locaiton")
+    }
+    
     
     // MARK: - String Work
     func addressFromLocation(location: CLLocation, completion:(stringLocation: String, zip: String)->Void){
@@ -86,45 +108,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             completion(location: loc, placemark: placemark)
         }
     }
-    
-    
-    //MARK: - CoreLocation Delegate
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        print("location found")
-        
-        if !hasLocation {
-            hasLocation = true
-            if let foundLocation = locations.first{
-                
-                currentLocationCoord = foundLocation.coordinates
-                getTrafficTime({ (time, error) -> Void in
-                    if let time = time {
-                        self.trafficTime = time
-
-                        self.timeToLeave(time)
-                        
-                    }
-
-                })
-                
-                
-//                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdated", object: nil, userInfo: ["coordinates":foundLocation.coordinates])
-
-    //            addressFromLocation(foundLocation, completion: { (stringLocation, zip) -> Void in
-    //                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdated", object: nil, userInfo: ["location":foundLocation, "stringLocation":stringLocation, "zip":zip])
-    //            })
-                
-            }
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print(error)
-        print("Cant Get Current Locaiton")
-    }
 }
+
+
 
 extension CLLocation {
     var coordinates: [String:Double] {

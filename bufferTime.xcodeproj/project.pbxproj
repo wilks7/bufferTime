@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */; };
 		1F28CBF51C2B94620096BDB8 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */; };
+		1F6B44051C50312000B6989A /* NoLocationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B44041C50312000B6989A /* NoLocationSettingsViewController.swift */; };
+		1F6B44091C504C7000B6989A /* CheckSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B44081C504C7000B6989A /* CheckSettingsViewController.swift */; };
 		1F809EB81C2949E100CD330C /* CandleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F809EB71C2949E100CD330C /* CandleController.swift */; };
 		1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */; };
 		1F9B92CB1C49A85900E5FE19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9B92C91C49A85900E5FE19 /* Bolts.framework */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAddressViewController.swift; sourceTree = "<group>"; };
 		1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		1F6B44041C50312000B6989A /* NoLocationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoLocationSettingsViewController.swift; sourceTree = "<group>"; };
+		1F6B44081C504C7000B6989A /* CheckSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckSettingsViewController.swift; sourceTree = "<group>"; };
 		1F809EB71C2949E100CD330C /* CandleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CandleController.swift; path = ../CandleController.swift; sourceTree = "<group>"; };
 		1F9B92C71C499C8000E5FE19 /* FunctionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		1F9B92C91C49A85900E5FE19 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -134,6 +138,9 @@
 		1F9B92CD1C49A85D00E5FE19 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				1FC825A31C4EBE6700199B28 /* Foundation.framework */,
+				1FC825A11C4EBE5D00199B28 /* UIKit.framework */,
+				1FC8259F1C4EBE4500199B28 /* AVFoundation.framework */,
 				1F9B92E01C49AB3600E5FE19 /* libsqlite3.tbd */,
 				1F9B92DE1C49AB2C00E5FE19 /* libz.tbd */,
 				1F9B92DC1C49AB0600E5FE19 /* SystemConfiguration.framework */,
@@ -153,9 +160,6 @@
 		1FAA94101C28C48C00CA200C = {
 			isa = PBXGroup;
 			children = (
-				1FC825A31C4EBE6700199B28 /* Foundation.framework */,
-				1FC825A11C4EBE5D00199B28 /* UIKit.framework */,
-				1FC8259F1C4EBE4500199B28 /* AVFoundation.framework */,
 				1FAA941B1C28C48C00CA200C /* bufferTime */,
 				1FAA941A1C28C48C00CA200C /* Products */,
 			);
@@ -191,9 +195,11 @@
 		BB66838A1C3358D900D63CFB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F6B44041C50312000B6989A /* NoLocationSettingsViewController.swift */,
 				1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */,
 				1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */,
 				BBBA06A71C4476CE000E6BAA /* FirstViewController.swift */,
+				1F6B44081C504C7000B6989A /* CheckSettingsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6B44091C504C7000B6989A /* CheckSettingsViewController.swift in Sources */,
 				1F9B92C81C499C8000E5FE19 /* FunctionsViewController.swift in Sources */,
 				BB7E3C1E1C4CB41A00BF27FB /* Parsha.swift in Sources */,
 				BB319D6B1C4C6E86006ADEF5 /* AppearenceController.swift in Sources */,
@@ -286,6 +293,7 @@
 				1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */,
 				BB319D691C4C5D26006ADEF5 /* Home.swift in Sources */,
 				BBBA06A81C4476CE000E6BAA /* FirstViewController.swift in Sources */,
+				1F6B44051C50312000B6989A /* NoLocationSettingsViewController.swift in Sources */,
 				1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */,
 				BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */,
 				1FAA942F1C28C91B00CA200C /* NetworkController.swift in Sources */,

@@ -4,9 +4,11 @@
 /* 
 
 
-- How to handle the -5:00 appendned on all NSDates (in candle model)
+- How to pull weekly data like candle lighting parsha and daily holiday
 
-- how to handle if user flies somewhere
+- How to handle check for settings flow see delegate method for location manager didchangeauthorization
+
+- How to check if location checked in the last 30min
 
 
 */

@@ -45,6 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(types)
         
         
+        if application.applicationState ==  .Inactive{
+        print("App is inactive")
+        let testObj = PFObject(className: "Testing")
+        testObj["state"] = "InactiveFinish"
+        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+            print("Saved")
+            }
+        }
+        
         return true
     }
 
@@ -101,21 +110,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("push it")
         //set timer for every 30min to call:
         //LocationController.sharedInsance.getCurrentLocation()
-        completionHandler(UIBackgroundFetchResult.NoData)
+        LocationController.sharedController.getTrafficTime { (time, error) -> Void in
+            print(time)
+        }
+        
+        let testObj = PFObject(className: "Testing")
+        testObj["state"] = "Made it to start of switch"
+        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+            print("Saved")
+        }
         
         switch application.applicationState {
             case .Inactive:
                 print("App is inactive")
-                let testObj = PFObject(className: "Testee")
-                testObj["mike"] = "Wilks"
+                let testObj = PFObject(className: "Testing")
+                testObj["state"] = "inactive"
                 testObj.saveInBackgroundWithBlock { (_, _) -> Void in
                     print("Saved")
                 }
             case .Background:
-                print("App is running in background")
+                let testObj = PFObject(className: "Testing")
+                testObj["state"] = "background"
+                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+                    print("Saved")
+                }
             case .Active:
-                print("App is Open")
+                let testObj = PFObject(className: "Testing")
+                testObj["state"] = "Active"
+                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+                    print("Saved")
+                }
+
         }
+        
+        completionHandler(UIBackgroundFetchResult.NoData)
     }
 }
 
