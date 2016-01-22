@@ -10,9 +10,19 @@ import UIKit
 import Parse
 import CoreLocation
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController {
 
     @IBOutlet weak var tableViewOutlet: UITableView!
+    
+    @IBOutlet weak var parshaLabel: UILabel!
+    
+    @IBOutlet weak var candleLabel: UILabel!
+    
+    @IBOutlet weak var extraLabel: UILabel!
+    
+    @IBOutlet weak var stackViewOutlet: UIStackView!
+    
+    
     
     static let sharedInstance = FirstViewController()
     
@@ -32,10 +42,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewOutlet.layer.borderWidth = 2.5
-        tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
-        tableViewOutlet.layer.cornerRadius = 5
-        testStuff()
+        
+        stackViewOutlet.layer.borderWidth = 1.5
+        stackViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
+        stackViewOutlet.layer.cornerRadius = 5
+        
+        if let holiday = JsonController.queryHolidays(){
+            extraLabel.text = holiday.name
+        }
+        
+        if let parsha = JsonController.queryParshas() {
+            parshaLabel.text = parsha.title
+        }        
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -82,36 +100,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    // MARK: TableView DataSource
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let parshaCell = tableView.dequeueReusableCellWithIdentifier("parsha", forIndexPath: indexPath)
-        let candleCell = tableView.dequeueReusableCellWithIdentifier("candle", forIndexPath: indexPath)
-        let extraCell = tableView.dequeueReusableCellWithIdentifier("extra", forIndexPath: indexPath)
-        
-        parshaCell.textLabel?.text = JsonController.queryParshas()?.hebrew
-        candleCell.textLabel?.text = "Candle"
-        extraCell.textLabel?.text = "Extra"
-        
-        parshaCell.textLabel?.textColor = .whiteColor()
-        candleCell.textLabel?.textColor = .whiteColor()
-        extraCell.textLabel?.textColor = .whiteColor()
-        
-        if indexPath.row == 0 {
-            return candleCell
-        } else if indexPath.row == 1 {
-            return parshaCell
-        } else {
-            return extraCell
-        }
-        
-    }
-    
-    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -132,11 +120,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    
-    func testStuff(){
-        JsonController.queryHolidays()
-        JsonController.queryParshas()
-    }
     
     func notificationTest(){
         let date = NSDate()

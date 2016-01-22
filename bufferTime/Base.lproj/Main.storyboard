@@ -261,48 +261,6 @@
                                     <segue destination="gBo-VA-CUK" kind="presentation" id="Jpu-LH-WSW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hAC-ge-8pl">
-                                <rect key="frame" x="49" y="106" width="502" height="388"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="parsha" id="25Q-VX-fyq">
-                                        <rect key="frame" x="0.0" y="28" width="502" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25Q-VX-fyq" id="ryd-QY-TNv">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="candle" id="aBM-CD-E8Y">
-                                        <rect key="frame" x="0.0" y="72" width="502" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBM-CD-E8Y" id="YFw-Ec-axG">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="extra" id="xRu-nR-WBq">
-                                        <rect key="frame" x="0.0" y="116" width="502" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xRu-nR-WBq" id="GUB-PG-rIS">
-                                            <rect key="frame" x="0.0" y="0.0" width="502" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.51372549020000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="KDp-GA-GiT" id="oR7-At-gip"/>
-                                    <outlet property="delegate" destination="KDp-GA-GiT" id="zJa-uM-ImY"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-Xp-6Yz">
                                 <rect key="frame" x="275" y="540" width="50" height="30"/>
                                 <state key="normal" title="Manual">
@@ -312,21 +270,51 @@
                                     <action selector="manualButtonTapped:" destination="KDp-GA-GiT" eventType="touchUpInside" id="dGO-OJ-GKA"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gzt-mG-jZd">
+                                <rect key="frame" x="144" y="90" width="313" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evs-0H-BuJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="133.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-vh-3Q9">
+                                        <rect key="frame" x="0.0" y="133.5" width="313" height="133"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-rY-x9F">
+                                        <rect key="frame" x="0.0" y="266.5" width="313" height="133.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jgf-vh-3Q9" firstAttribute="height" secondItem="evs-0H-BuJ" secondAttribute="height" id="eFr-MT-Dmo"/>
+                                    <constraint firstAttribute="width" constant="313" id="mgU-8R-Gwx"/>
+                                    <constraint firstAttribute="height" constant="400" id="qwh-G4-ZVb"/>
+                                    <constraint firstItem="cCQ-rY-x9F" firstAttribute="height" secondItem="evs-0H-BuJ" secondAttribute="height" id="wbs-Lg-Tfu"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196078431371" green="0.51372549019607838" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hAC-ge-8pl" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="86" id="6AG-nP-65C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wpT-P1-dCZ" secondAttribute="trailing" id="9je-6l-NYg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hAC-ge-8pl" secondAttribute="trailing" constant="29" id="FWP-Ua-X1t"/>
-                            <constraint firstItem="hAC-ge-8pl" firstAttribute="leading" secondItem="ca8-0x-2SX" secondAttribute="leadingMargin" constant="29" id="NtF-TT-Z00"/>
+                            <constraint firstItem="gzt-mG-jZd" firstAttribute="centerX" secondItem="ca8-0x-2SX" secondAttribute="centerX" id="LnJ-qK-KjX"/>
                             <constraint firstItem="wpT-P1-dCZ" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="8" id="TaK-x4-a4Z"/>
                             <constraint firstItem="Ruz-Zj-BDX" firstAttribute="top" secondItem="Xwy-Xp-6Yz" secondAttribute="bottom" constant="30" id="VwV-yW-aKm"/>
                             <constraint firstItem="Xwy-Xp-6Yz" firstAttribute="centerX" secondItem="ca8-0x-2SX" secondAttribute="centerX" id="WvY-Az-SYa"/>
-                            <constraint firstItem="Ruz-Zj-BDX" firstAttribute="top" secondItem="hAC-ge-8pl" secondAttribute="bottom" constant="106" id="hKg-Eo-xuu"/>
+                            <constraint firstItem="gzt-mG-jZd" firstAttribute="top" secondItem="bp2-Br-tcw" secondAttribute="bottom" constant="70" id="fna-Ns-G2C"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableViewOutlet" destination="hAC-ge-8pl" id="44u-1c-b6y"/>
+                        <outlet property="candleLabel" destination="jgf-vh-3Q9" id="pTe-Mf-yjf"/>
+                        <outlet property="extraLabel" destination="cCQ-rY-x9F" id="Ql1-cQ-InT"/>
+                        <outlet property="parshaLabel" destination="evs-0H-BuJ" id="uLo-o4-lUJ"/>
+                        <outlet property="stackViewOutlet" destination="gzt-mG-jZd" id="BE1-5k-lW7"/>
                         <segue destination="WFp-ZO-Bn7" kind="presentation" identifier="firstUser" id="uuQ-Ex-Rn2"/>
                         <segue destination="qDJ-ts-6FX" kind="presentation" identifier="turnOnSettings" id="cRo-Pm-0ro"/>
                     </connections>
@@ -426,7 +414,7 @@
         <image name="Settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o6v-q5-S3T"/>
-        <segue reference="kf1-7f-ARi"/>
+        <segue reference="Jpu-LH-WSW"/>
+        <segue reference="uuQ-Ex-Rn2"/>
     </inferredMetricsTieBreakers>
 </document>
