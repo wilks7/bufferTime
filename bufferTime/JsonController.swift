@@ -63,12 +63,32 @@ class JsonController {
             return nil
         }
         
+        let yearMonthFormatter = NSDateFormatter()
+        yearMonthFormatter.dateFormat = "yyyy-MM"
+        let dayFormatter = NSDateFormatter()
+        dayFormatter.dateFormat = "dd"
+        let yearMonthString = yearMonthFormatter.stringFromDate(NSDate())
+        let dayString = Int(dayFormatter.stringFromDate(NSDate()))
+        
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        let todayString = formatter.stringFromDate(NSDate())
+        let myString = formatter.stringFromDate(NSDate())
+        
+        var daysOfWeek:[String] = []
+        for i in 0...6{
+            let fullDate = yearMonthString + "-" + String(dayString!-i)
+            daysOfWeek.append(fullDate)
+        }
         
         if let dicObject = object as? [String:AnyObject]{
-            
+            if let items = dicObject["items"] as? [[String:AnyObject]]{
+                for dic in items {
+                    let parsha = Parsha(json: dic)
+                    if myString < parsha.date {
+                        return parsha
+                    }
+                }
+            }
         }
         
         

@@ -93,7 +93,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let candleCell = tableView.dequeueReusableCellWithIdentifier("candle", forIndexPath: indexPath)
         let extraCell = tableView.dequeueReusableCellWithIdentifier("extra", forIndexPath: indexPath)
         
-        parshaCell.textLabel?.text = "Parsha"
+        parshaCell.textLabel?.text = JsonController.queryParshas()?.hebrew
         candleCell.textLabel?.text = "Candle"
         extraCell.textLabel?.text = "Extra"
         
@@ -101,15 +101,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         candleCell.textLabel?.textColor = .whiteColor()
         extraCell.textLabel?.textColor = .whiteColor()
         
-        switch indexPath.row {
-        case 0:
-            return parshaCell
-        case 1:
+        if indexPath.row == 0 {
             return candleCell
-        case 2:
-            return extraCell
-        default:
+        } else if indexPath.row == 1 {
             return parshaCell
+        } else {
+            return extraCell
         }
         
     }
@@ -138,6 +135,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func testStuff(){
         JsonController.queryHolidays()
+        JsonController.queryParshas()
     }
     
     func notificationTest(){
