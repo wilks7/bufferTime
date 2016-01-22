@@ -38,11 +38,16 @@ class FirstViewController: UIViewController {
         LocationController.sharedController.locationManager.delegate = LocationController.sharedController
         LocationController.sharedController.locationManager.distanceFilter = 10
         LocationController.sharedController.locationManager.startUpdatingLocation()
+        LocationController.sharedController.locationManager.requestLocation()
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fetch:", name: "getZip", object: nil)
+        
+        LocationController.sharedController.locationManager.delegate = LocationController.sharedController
+        LocationController.sharedController.locationManager.requestLocation()
         
         stackViewOutlet.layer.borderWidth = 1.5
         stackViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
@@ -55,7 +60,9 @@ class FirstViewController: UIViewController {
         if let parsha = JsonController.queryParshas() {
             parshaLabel.text = parsha.title
             parshaHebrewLabel.text = parsha.hebrew
-        }        
+        }
+        
+        
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -66,6 +73,27 @@ class FirstViewController: UIViewController {
             print("no device settings")
         }else{
             print("device has settings")
+        }
+    }
+    
+    func fetch(notification: NSNotification){
+        if let zip = notification.userInfo!["zip"] as? String {
+            NetworkController.fetchBasedOnZip(zip, completion: { (holidays, candles, parshas, error) -> Void in
+                if let candles = candles {
+                    let formatter = NSDateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    let todayString = formatter.stringFromDate(NSDate())
+                    
+                    for candle in candles {
+                        let candleString = formatter.stringFromDate(candle.date)
+                        if todayString < candleString {
+                            //completion(candleTime: candle.stringDate())
+                            self.extraLabel.text = candleString
+                            self.reloadInputViews()
+                        }
+                    }
+                }
+            })
         }
     }
     

@@ -85,6 +85,11 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             
             if let foundLocation = locations.first{
                 
+                
+                addressFromLocation(foundLocation, completion: { (stringLocation, zip) -> Void in
+                    NSNotificationCenter.defaultCenter().postNotificationName("getZip", object: nil, userInfo: ["zip":zip])
+                })
+                
                 currentLocationCoord = foundLocation.coordinates
                 
                 getTrafficTime(foundLocation.coordinates, completion: { (time, error) -> Void in
