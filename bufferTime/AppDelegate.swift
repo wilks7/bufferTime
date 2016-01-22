@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if application.applicationState ==  .Inactive{
             print("App is inactive")
             let testObj = PFObject(className: "Testing")
-            testObj["state"] = "InactiveFinish"
+            testObj["state"] = "didFinish"
             testObj.saveInBackgroundWithBlock { (_, _) -> Void in
                 print("Saved")
             }
@@ -112,34 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LocationController.sharedController.locationManager.distanceFilter = 10
         LocationController.sharedController.locationManager.startUpdatingLocation()
         
-//        let testObj = PFObject(className: "Testing")
-//        testObj["state"] = "Made it to start of switch"
-//        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-//            print("Saved")
-//        }
-//        
-//        switch application.applicationState {
-//            case .Inactive:
-//                print("App is inactive")
-//                let testObj = PFObject(className: "Testing")
-//                testObj["state"] = "inactive"
-//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-//                    print("Saved")
-//                }
-//            case .Background:
-//                let testObj = PFObject(className: "Testing")
-//                testObj["state"] = "background"
-//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-//                    print("Saved")
-//                }
-//            case .Active:
-//                let testObj = PFObject(className: "Testing")
-//                testObj["state"] = "Active"
-//                testObj.saveInBackgroundWithBlock { (_, _) -> Void in
-//                    print("Saved")
-//                }
-//
-//        }
+        let testObj = PFObject(className: "Testing")
+        testObj["state"] = "ninja we made it"
+        testObj.saveInBackgroundWithBlock { (_, _) -> Void in
+            print("Saved")
+        }
         
         completionHandler(UIBackgroundFetchResult.NoData)
     }
