@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     @IBOutlet weak var parshaLabel: UILabel!
+    @IBOutlet weak var parshaHebrewLabel: UILabel!
     
     @IBOutlet weak var candleLabel: UILabel!
     
@@ -53,6 +54,7 @@ class FirstViewController: UIViewController {
         
         if let parsha = JsonController.queryParshas() {
             parshaLabel.text = parsha.title
+            parshaHebrewLabel.text = parsha.hebrew
         }        
     }
 

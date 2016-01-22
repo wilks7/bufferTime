@@ -273,30 +273,42 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gzt-mG-jZd">
                                 <rect key="frame" x="144" y="90" width="313" height="400"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evs-0H-BuJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="133.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqN-CE-fwk">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evs-0H-BuJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJE-Eg-p4C">
+                                                <rect key="frame" x="157" y="0.0" width="157" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="KJE-Eg-p4C" firstAttribute="width" secondItem="evs-0H-BuJ" secondAttribute="width" id="elw-hM-Qth"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-vh-3Q9">
+                                        <rect key="frame" x="0.0" y="21" width="313" height="359"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-vh-3Q9">
-                                        <rect key="frame" x="0.0" y="133.5" width="313" height="133"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-rY-x9F">
-                                        <rect key="frame" x="0.0" y="266.5" width="313" height="133.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-rY-x9F">
+                                        <rect key="frame" x="0.0" y="380" width="313" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="jgf-vh-3Q9" firstAttribute="height" secondItem="evs-0H-BuJ" secondAttribute="height" id="eFr-MT-Dmo"/>
                                     <constraint firstAttribute="width" constant="313" id="mgU-8R-Gwx"/>
                                     <constraint firstAttribute="height" constant="400" id="qwh-G4-ZVb"/>
-                                    <constraint firstItem="cCQ-rY-x9F" firstAttribute="height" secondItem="evs-0H-BuJ" secondAttribute="height" id="wbs-Lg-Tfu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -313,6 +325,7 @@
                     <connections>
                         <outlet property="candleLabel" destination="jgf-vh-3Q9" id="pTe-Mf-yjf"/>
                         <outlet property="extraLabel" destination="cCQ-rY-x9F" id="Ql1-cQ-InT"/>
+                        <outlet property="parshaHebrewLabel" destination="KJE-Eg-p4C" id="6DF-Ty-HO3"/>
                         <outlet property="parshaLabel" destination="evs-0H-BuJ" id="uLo-o4-lUJ"/>
                         <outlet property="stackViewOutlet" destination="gzt-mG-jZd" id="BE1-5k-lW7"/>
                         <segue destination="WFp-ZO-Bn7" kind="presentation" identifier="firstUser" id="uuQ-Ex-Rn2"/>
