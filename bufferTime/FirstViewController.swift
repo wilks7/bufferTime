@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViewOutlet.layer.borderWidth = 2.5
         tableViewOutlet.layer.borderColor = UIColor.whiteColor().CGColor
         tableViewOutlet.layer.cornerRadius = 5
+        testStuff()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -134,6 +135,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    
+    func testStuff(){
+        JsonController.queryHolidays()
+    }
     
     func notificationTest(){
         let date = NSDate()

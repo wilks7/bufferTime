@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F23138C1C51B59400ABF478 /* JsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23138B1C51B59400ABF478 /* JsonController.swift */; };
+		1F2313911C51BA4800ABF478 /* Parsha_JSON_2016.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F23138D1C51BA4800ABF478 /* Parsha_JSON_2016.json */; };
+		1F2313921C51BA4800ABF478 /* Parsha_JSON_2017.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F23138E1C51BA4800ABF478 /* Parsha_JSON_2017.json */; };
+		1F2313931C51BA4800ABF478 /* Holiday_JSON_2017.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F23138F1C51BA4800ABF478 /* Holiday_JSON_2017.json */; };
+		1F2313941C51BA4800ABF478 /* Holiday_JSON_2016.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F2313901C51BA4800ABF478 /* Holiday_JSON_2016.json */; };
 		1F28CBF11C2B82BA0096BDB8 /* ChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */; };
 		1F28CBF51C2B94620096BDB8 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */; };
 		1F6B44051C50312000B6989A /* NoLocationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B44041C50312000B6989A /* NoLocationSettingsViewController.swift */; };
@@ -46,6 +51,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F23138B1C51B59400ABF478 /* JsonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonController.swift; sourceTree = "<group>"; };
+		1F23138D1C51BA4800ABF478 /* Parsha_JSON_2016.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Parsha_JSON_2016.json; sourceTree = "<group>"; };
+		1F23138E1C51BA4800ABF478 /* Parsha_JSON_2017.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Parsha_JSON_2017.json; sourceTree = "<group>"; };
+		1F23138F1C51BA4800ABF478 /* Holiday_JSON_2017.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Holiday_JSON_2017.json; sourceTree = "<group>"; };
+		1F2313901C51BA4800ABF478 /* Holiday_JSON_2016.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Holiday_JSON_2016.json; sourceTree = "<group>"; };
 		1F28CBF01C2B82BA0096BDB8 /* ChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAddressViewController.swift; sourceTree = "<group>"; };
 		1F28CBF41C2B94620096BDB8 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		1F6B44041C50312000B6989A /* NoLocationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoLocationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +122,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F23138A1C51B46600ABF478 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				1F23138D1C51BA4800ABF478 /* Parsha_JSON_2016.json */,
+				1F23138E1C51BA4800ABF478 /* Parsha_JSON_2017.json */,
+				1F23138F1C51BA4800ABF478 /* Holiday_JSON_2017.json */,
+				1F2313901C51BA4800ABF478 /* Holiday_JSON_2016.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 		1F28CBEA1C2B7B2B0096BDB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +152,7 @@
 				1FAA942E1C28C91B00CA200C /* NetworkController.swift */,
 				1FAA94341C29019700CA200C /* LocationController.swift */,
 				1F809EB71C2949E100CD330C /* CandleController.swift */,
+				1F23138B1C51B59400ABF478 /* JsonController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +210,7 @@
 				1FAA94231C28C48C00CA200C /* Assets.xcassets */,
 				1FAA94251C28C48C00CA200C /* LaunchScreen.storyboard */,
 				1FAA94281C28C48C00CA200C /* Info.plist */,
+				1F23138A1C51B46600ABF478 /* JSON */,
 			);
 			path = bufferTime;
 			sourceTree = "<group>";
@@ -271,8 +294,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2313921C51BA4800ABF478 /* Parsha_JSON_2017.json in Resources */,
+				1F2313941C51BA4800ABF478 /* Holiday_JSON_2016.json in Resources */,
 				1FC8259E1C4EBB5F00199B28 /* MGS.mp3 in Resources */,
+				1F2313931C51BA4800ABF478 /* Holiday_JSON_2017.json in Resources */,
 				1FAA94271C28C48C00CA200C /* LaunchScreen.storyboard in Resources */,
+				1F2313911C51BA4800ABF478 /* Parsha_JSON_2016.json in Resources */,
 				1FAA94241C28C48C00CA200C /* Assets.xcassets in Resources */,
 				1FAA94221C28C48C00CA200C /* Main.storyboard in Resources */,
 			);
@@ -296,6 +323,7 @@
 				1F6B44051C50312000B6989A /* NoLocationSettingsViewController.swift in Sources */,
 				1FAA94311C28CAAB00CA200C /* Holiday.swift in Sources */,
 				BBBA06AC1C448B04000E6BAA /* questions.swift in Sources */,
+				1F23138C1C51B59400ABF478 /* JsonController.swift in Sources */,
 				1FAA942F1C28C91B00CA200C /* NetworkController.swift in Sources */,
 				1F809EB81C2949E100CD330C /* CandleController.swift in Sources */,
 				BBBA06AA1C4478AB000E6BAA /* SettingsController.swift in Sources */,

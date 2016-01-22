@@ -1,0 +1,439 @@
+{
+   "link":"http://www.hebcal.com/hebcal/?v=1;year=2017;month=x;maj=on;min=on;mod=on;c=off",
+   "location":{
+      "geo":"none"
+   },
+   "items":[
+      {
+         "hebrew":"חנוכה: יום ח׳",
+         "date":"2017-01-01",
+         "title":"Chanukah: 8th Day",
+         "category":"holiday",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "link":"http://www.hebcal.com/holidays/chanukah"
+      },
+      {
+         "hebrew":"טו בשבט",
+         "date":"2017-02-11",
+         "title":"Tu BiShvat",
+         "category":"holiday",
+         "memo":"New Year for Trees",
+         "link":"http://www.hebcal.com/holidays/tu-bishvat"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/purim",
+         "memo":"Purim is one of the most joyous and fun holidays on the Jewish calendar",
+         "date":"2017-03-11",
+         "hebrew":"ערב פורים",
+         "title":"Erev Purim",
+         "category":"holiday"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/purim",
+         "memo":"Purim is one of the most joyous and fun holidays on the Jewish calendar",
+         "date":"2017-03-12",
+         "hebrew":"פורים",
+         "category":"holiday",
+         "title":"Purim"
+      },
+      {
+         "hebrew":"שושן פורים",
+         "date":"2017-03-13",
+         "category":"holiday",
+         "title":"Shushan Purim",
+         "link":"http://www.hebcal.com/holidays/shushan-purim",
+         "memo":"Purim celebrated in Jerusalem and walled cities"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "title":"Erev Pesach",
+         "category":"holiday",
+         "date":"2017-04-10",
+         "hebrew":"ערב פסח"
+      },
+      {
+         "date":"2017-04-11",
+         "hebrew":"פסח יום א׳",
+         "category":"holiday",
+         "title":"Pesach I",
+         "yomtov":true,
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "memo":"Passover, the Feast of Unleavened Bread"
+      },
+      {
+         "yomtov":true,
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "category":"holiday",
+         "title":"Pesach II",
+         "date":"2017-04-12",
+         "hebrew":"פסח יום ב׳"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "hebrew":"פסח יום ג׳ (חול המועד)",
+         "date":"2017-04-13",
+         "title":"Pesach III (CH''M)",
+         "category":"holiday"
+      },
+      {
+         "hebrew":"פסח יום ד׳ (חול המועד)",
+         "date":"2017-04-14",
+         "title":"Pesach IV (CH''M)",
+         "category":"holiday",
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "link":"http://www.hebcal.com/holidays/pesach"
+      },
+      {
+         "date":"2017-04-15",
+         "hebrew":"פסח יום ה׳ (חול המועד)",
+         "category":"holiday",
+         "title":"Pesach V (CH''M)",
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "link":"http://www.hebcal.com/holidays/pesach"
+      },
+      {
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "category":"holiday",
+         "title":"Pesach VI (CH''M)",
+         "hebrew":"פסח יום ו׳ (חול המועד)",
+         "date":"2017-04-16"
+      },
+      {
+         "title":"Pesach VII",
+         "category":"holiday",
+         "hebrew":"פסח יום ז׳",
+         "date":"2017-04-17",
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "memo":"Passover, the Feast of Unleavened Bread",
+         "yomtov":true
+      },
+      {
+         "title":"Pesach VIII",
+         "category":"holiday",
+         "date":"2017-04-18",
+         "hebrew":"פסח יום ח׳",
+         "yomtov":true,
+         "link":"http://www.hebcal.com/holidays/pesach",
+         "memo":"Passover, the Feast of Unleavened Bread"
+      },
+      {
+         "date":"2017-04-24",
+         "hebrew":"יום השואה",
+         "category":"holiday",
+         "title":"Yom HaShoah",
+         "link":"http://www.hebcal.com/holidays/yom-hashoah",
+         "memo":"Holocaust Memorial Day"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/yom-hazikaron",
+         "memo":"Israeli Memorial Day",
+         "date":"2017-05-01",
+         "hebrew":"יום הזכרון",
+         "title":"Yom HaZikaron",
+         "category":"holiday"
+      },
+      {
+         "date":"2017-05-02",
+         "hebrew":"יום העצמאות",
+         "title":"Yom HaAtzma'ut",
+         "category":"holiday",
+         "memo":"Israeli Independence Day",
+         "link":"http://www.hebcal.com/holidays/yom-haatzmaut"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/pesach-sheni",
+         "memo":"Second Passover, one month after Passover",
+         "category":"holiday",
+         "title":"Pesach Sheni",
+         "date":"2017-05-10",
+         "hebrew":"פסח שני"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/lag-bomer",
+         "memo":"33rd day of counting the Omer",
+         "date":"2017-05-14",
+         "hebrew":"ל״ג בעומר",
+         "title":"Lag B'Omer",
+         "category":"holiday"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/yom-yerushalayim",
+         "memo":"Jerusalem Day",
+         "category":"holiday",
+         "title":"Yom Yerushalayim",
+         "hebrew":"יום ירושלים",
+         "date":"2017-05-24"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/shavuot",
+         "memo":"Festival of Weeks, commemorates the giving of the Torah at Mount Sinai",
+         "date":"2017-05-30",
+         "hebrew":"ערב שבועות",
+         "category":"holiday",
+         "title":"Erev Shavuot"
+      },
+      {
+         "category":"holiday",
+         "title":"Shavuot I",
+         "hebrew":"שבועות יום א׳",
+         "date":"2017-05-31",
+         "memo":"Festival of Weeks, commemorates the giving of the Torah at Mount Sinai",
+         "link":"http://www.hebcal.com/holidays/shavuot",
+         "yomtov":true
+      },
+      {
+         "category":"holiday",
+         "title":"Shavuot II",
+         "date":"2017-06-01",
+         "hebrew":"שבועות יום ב׳",
+         "yomtov":true,
+         "memo":"Festival of Weeks, commemorates the giving of the Torah at Mount Sinai",
+         "link":"http://www.hebcal.com/holidays/shavuot"
+      },
+      {
+         "title":"Erev Tish'a B'Av",
+         "category":"holiday",
+         "hebrew":"ערב תשעה באב",
+         "date":"2017-07-31",
+         "link":"http://www.hebcal.com/holidays/tisha-bav",
+         "memo":"The Ninth of Av, fast commemorating the destruction of the two Temples"
+      },
+      {
+         "date":"2017-08-01",
+         "hebrew":"תשעה באב",
+         "category":"holiday",
+         "title":"Tish'a B'Av",
+         "link":"http://www.hebcal.com/holidays/tisha-bav",
+         "memo":"The Ninth of Av, fast commemorating the destruction of the two Temples"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/tu-bav",
+         "memo":"Jewish holiday of love, similar to Valentine's Day",
+         "title":"Tu B'Av",
+         "category":"holiday",
+         "date":"2017-08-07",
+         "hebrew":"טו באב"
+      },
+      {
+         "memo":"Prayers for forgiveness in preparation for the High Holidays",
+         "link":"http://www.hebcal.com/holidays/leil-selichot",
+         "hebrew":"סליחות",
+         "date":"2017-09-16",
+         "category":"holiday",
+         "title":"Leil Selichot"
+      },
+      {
+         "memo":"The Jewish New Year",
+         "link":"http://www.hebcal.com/holidays/rosh-hashana",
+         "date":"2017-09-20",
+         "hebrew":"ערב ראש השנה",
+         "title":"Erev Rosh Hashana",
+         "category":"holiday"
+      },
+      {
+         "yomtov":true,
+         "link":"http://www.hebcal.com/holidays/rosh-hashana",
+         "memo":"The Jewish New Year",
+         "date":"2017-09-21",
+         "hebrew":"ראש השנה 5778",
+         "category":"holiday",
+         "title":"Rosh Hashana 5778"
+      },
+      {
+         "hebrew":"ראש השנה יום ב׳",
+         "date":"2017-09-22",
+         "title":"Rosh Hashana II",
+         "category":"holiday",
+         "link":"http://www.hebcal.com/holidays/rosh-hashana",
+         "memo":"The Jewish New Year",
+         "yomtov":true
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/yom-kippur",
+         "memo":"Day of Atonement",
+         "hebrew":"ערב יום כפור",
+         "date":"2017-09-29",
+         "title":"Erev Yom Kippur",
+         "category":"holiday"
+      },
+      {
+         "title":"Yom Kippur",
+         "category":"holiday",
+         "date":"2017-09-30",
+         "hebrew":"יום כפור",
+         "yomtov":true,
+         "memo":"Day of Atonement",
+         "link":"http://www.hebcal.com/holidays/yom-kippur"
+      },
+      {
+         "date":"2017-10-04",
+         "hebrew":"ערב סוכות",
+         "title":"Erev Sukkot",
+         "category":"holiday",
+         "memo":"Feast of Tabernacles",
+         "link":"http://www.hebcal.com/holidays/sukkot"
+      },
+      {
+         "yomtov":true,
+         "memo":"Feast of Tabernacles",
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "title":"Sukkot I",
+         "category":"holiday",
+         "date":"2017-10-05",
+         "hebrew":"סוכות יום א׳"
+      },
+      {
+         "date":"2017-10-06",
+         "hebrew":"סוכות יום ב׳",
+         "title":"Sukkot II",
+         "category":"holiday",
+         "yomtov":true,
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "memo":"Feast of Tabernacles"
+      },
+      {
+         "category":"holiday",
+         "title":"Sukkot III (CH''M)",
+         "date":"2017-10-07",
+         "hebrew":"סוכות יום ג׳ (חול המועד)",
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "memo":"Feast of Tabernacles"
+      },
+      {
+         "category":"holiday",
+         "title":"Sukkot IV (CH''M)",
+         "date":"2017-10-08",
+         "hebrew":"סוכות יום ד׳ (חול המועד)",
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "memo":"Feast of Tabernacles"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "memo":"Feast of Tabernacles",
+         "date":"2017-10-09",
+         "hebrew":"סוכות יום ה׳ (חול המועד)",
+         "title":"Sukkot V (CH''M)",
+         "category":"holiday"
+      },
+      {
+         "category":"holiday",
+         "title":"Sukkot VI (CH''M)",
+         "date":"2017-10-10",
+         "hebrew":"סוכות יום ו׳ (חול המועד)",
+         "link":"http://www.hebcal.com/holidays/sukkot",
+         "memo":"Feast of Tabernacles"
+      },
+      {
+         "category":"holiday",
+         "title":"Sukkot VII (Hoshana Raba)",
+         "date":"2017-10-11",
+         "hebrew":"סוכות יום ז׳ (הושנא רבה)",
+         "memo":"Feast of Tabernacles",
+         "link":"http://www.hebcal.com/holidays/sukkot"
+      },
+      {
+         "date":"2017-10-12",
+         "hebrew":"שמיני עצרת",
+         "title":"Shmini Atzeret",
+         "category":"holiday",
+         "yomtov":true,
+         "link":"http://www.hebcal.com/holidays/shmini-atzeret",
+         "memo":"Eighth Day of Assembly"
+      },
+      {
+         "title":"Simchat Torah",
+         "category":"holiday",
+         "date":"2017-10-13",
+         "hebrew":"שמחת תורה",
+         "yomtov":true,
+         "memo":"Day of Celebrating the Torah",
+         "link":"http://www.hebcal.com/holidays/simchat-torah"
+      },
+      {
+         "memo":"Ethiopian Jewish holiday occurring 50 days after Yom Kippur",
+         "link":"http://www.hebcal.com/holidays/sigd",
+         "date":"2017-11-18",
+         "hebrew":"סיגד",
+         "category":"holiday",
+         "title":"Sigd"
+      },
+      {
+         "category":"holiday",
+         "title":"Chanukah: 1 Candle",
+         "hebrew":"חנוכה: א׳ נר",
+         "date":"2017-12-12",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "link":"http://www.hebcal.com/holidays/chanukah"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "hebrew":"חנוכה: ב׳ נרות",
+         "date":"2017-12-13",
+         "title":"Chanukah: 2 Candles",
+         "category":"holiday"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "hebrew":"חנוכה: ג׳ נרות",
+         "date":"2017-12-14",
+         "title":"Chanukah: 3 Candles",
+         "category":"holiday"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "date":"2017-12-15",
+         "hebrew":"חנוכה: ד׳ נרות",
+         "category":"holiday",
+         "title":"Chanukah: 4 Candles"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "title":"Chanukah: 5 Candles",
+         "category":"holiday",
+         "date":"2017-12-16",
+         "hebrew":"חנוכה: ה׳ נרות"
+      },
+      {
+         "date":"2017-12-17",
+         "hebrew":"חנוכה: ו׳ נרות",
+         "title":"Chanukah: 6 Candles",
+         "category":"holiday",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "link":"http://www.hebcal.com/holidays/chanukah"
+      },
+      {
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights",
+         "category":"holiday",
+         "title":"Chanukah: 7 Candles",
+         "date":"2017-12-18",
+         "hebrew":"חנוכה: ז׳ נרות"
+      },
+      {
+         "title":"Chanukah: 8 Candles",
+         "category":"holiday",
+         "date":"2017-12-19",
+         "hebrew":"חנוכה: ח׳ נרות",
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights"
+      },
+      {
+         "date":"2017-12-20",
+         "hebrew":"חנוכה: יום ח׳",
+         "category":"holiday",
+         "title":"Chanukah: 8th Day",
+         "link":"http://www.hebcal.com/holidays/chanukah",
+         "memo":"The Jewish festival of rededication, also known as the Festival of Lights"
+      }
+   ],
+   "date":"2016-01-22T00:47:23-00:00",
+   "title":"Hebcal 2017"
+}
