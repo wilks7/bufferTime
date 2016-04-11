@@ -191,4 +191,52 @@ class NetworkController {
         dataTask.resume()
     }
     
+    static func getShabbosTime(zip: String, completion:(error: NSError?, time: String?)->Void){
+        let myUrlString = "http://www.hebcal.com/shabbat/?cfg=json&zip="
+        
+        guard let url = NSURL(string: myUrlString+zip) else {print("url problem");return}
+        
+        let dataTask = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+            
+            if let error = error {
+                completion(error: nil, time: nil)
+            }
+            
+            guard let data = data else { completion(error: nil, time: nil); return }
+            
+            let jsonObject: AnyObject
+            
+            do {
+                jsonObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+            } catch (let error as NSError){
+                completion(error: nil, time: nil)
+                return
+            }
+            
+            if let items = jsonObject["items"] as? [[String:AnyObject]]{
+                var candleTime: String?
+                var havdalahTime: String?
+            
+                for i in 0...items.count - 1 {
+                    guard let item = items[i] as? [String:String] else {completion(error: nil, time: nil);return}
+                    if item["category"] == "candles"{
+                        candleTime = item["title"]
+                    }
+                    if item["category"] == "havdalah"{
+                        havdalahTime = item["title"]
+                    }
+                }
+                completion(error: nil, time: candleTime!+havdalahTime!)
+                
+//                let candles = items[0]
+//                let time = candles["title"] as? String
+//                completion(error:nil, time: time)
+            } else {
+                completion(error: nil, time: nil)
+            }
+            
+        }
+        dataTask.resume()
+        
+    }
 }

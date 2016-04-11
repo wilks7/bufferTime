@@ -47,7 +47,6 @@ class JsonController {
     }
     
     
-    
     static func queryParshas()->Parsha?{
         
         guard let path = NSBundle.mainBundle().pathForResource("Parsha_JSON_2016", ofType: "json") else {return nil}
@@ -91,9 +90,9 @@ class JsonController {
             }
         }
         
-        
         return nil
     }
     
+
 }
 

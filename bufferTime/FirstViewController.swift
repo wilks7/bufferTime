@@ -62,6 +62,11 @@ class FirstViewController: UIViewController {
             parshaHebrewLabel.text = parsha.hebrew
         }
         
+        NetworkController.getShabbosTime("11581") { (error, time) in
+            if let time = time {
+                self.candleLabel.text = time
+            }
+        }
         
     }
 
