@@ -45,6 +45,18 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "fetch:", name: "getZip", object: nil)
+        if let zip = NSUserDefaults.standardUserDefaults().valueForKey("homeZip") as? String {
+            NetworkController.getShabbosTime(zip) { (error, candleTime, havdalahTime) in
+                if let candleString = candleTime, let havdalahString = havdalahTime {
+                    let candle = candleString.substringFromIndex(candleString.endIndex.advancedBy(-6))
+                    let havdalah = havdalahString.substringFromIndex(havdalahString.endIndex.advancedBy(-6))
+                    self.candleLabel.text = candle
+                    self.extraLabel.text = havdalah
+                }
+            }
+
+        }
+
         
         LocationController.sharedController.locationManager.delegate = LocationController.sharedController
         LocationController.sharedController.locationManager.requestLocation()
@@ -62,11 +74,6 @@ class FirstViewController: UIViewController {
             parshaHebrewLabel.text = parsha.hebrew
         }
         
-        NetworkController.getShabbosTime("11581") { (error, time) in
-            if let time = time {
-                self.candleLabel.text = time
-            }
-        }
         
     }
 
@@ -83,6 +90,15 @@ class FirstViewController: UIViewController {
     
     func fetch(notification: NSNotification){
         if let zip = notification.userInfo!["zip"] as? String {
+            
+//            NetworkController.getShabbosTime(zip) { (error, candleTime, havdalahTime) in
+//                if let candleString = candleTime, let havdalahString = havdalahTime {
+//                    let candle = candleString.substringFromIndex(candleString.endIndex.advancedBy(-6))
+//                    let havdalah = havdalahString.substringFromIndex(havdalahString.endIndex.advancedBy(-6))
+//                    self.candleLabel.text = candle
+//                    self.extraLabel.text = havdalah
+//                }
+//            }
             NetworkController.fetchBasedOnZip(zip, completion: { (holidays, candles, parshas, error) -> Void in
                 if let candles = candles {
                     let formatter = NSDateFormatter()
@@ -93,7 +109,7 @@ class FirstViewController: UIViewController {
                         let candleString = formatter.stringFromDate(candle.date)
                         if todayString < candleString {
                             //completion(candleTime: candle.stringDate())
-                            self.extraLabel.text = candleString
+                            //self.extraLabel.text = candleString
                             self.reloadInputViews()
                         }
                     }
