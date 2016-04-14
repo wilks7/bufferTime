@@ -25,6 +25,11 @@ class LabelViewController: UIViewController {
     
     var zip = ""
     
+    @IBAction func dismissButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     
     @IBAction func resetButtonTapped(sender: AnyObject) {
     }

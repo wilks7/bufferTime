@@ -23,6 +23,7 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var stackViewOutlet: UIStackView!
     
+    @IBOutlet weak var manualButtonOutlet: UIButton!
     
     
     static let sharedInstance = FirstViewController()
@@ -56,6 +57,8 @@ class FirstViewController: UIViewController {
             }
 
         }
+        
+        manualButtonOutlet.hidden = true
 
         
         LocationController.sharedController.locationManager.delegate = LocationController.sharedController
